@@ -12,10 +12,10 @@ function Navigation(props) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" onClick={() => { props.changeFunction('About') }}>About Us<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" onClick={() => { props.changeFunction('About') }}>Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onClick={() => { props.changeFunction('Home') }}>About Us<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" onClick={() => { props.changeFunction('Home')}}>About Us<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onClick={() => {props.changeFunction('Testimonials')}}>Testimonials<span class="sr-only">(current)</span></a>
