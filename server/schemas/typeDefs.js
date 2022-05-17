@@ -15,6 +15,7 @@ const typeDefs = gql`
     subCat: String
     createdAt: String
     username: String
+    description: String
   }
 
   type Auth {
