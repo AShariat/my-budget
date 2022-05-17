@@ -5,5 +5,7 @@ const DatePicker = function() {
         <section>
             <input type='date'></input>
         </section>
-    )
-}
+    );
+};
+
+export default DatePicker;
