@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PotentialDashboardForUsers = () {
+const PotentialDashboardForUsers = function() {
     return (
         <div class="container-fluid">
       <div class="row">
