@@ -7,6 +7,9 @@ import Home from './components/Home';
 import Testimonials from './components/Testimonials';
 import Login from './components/Login';
 
+/* check if logged in for conditional render of login page */
+/* if logged in then load different nav-bar for better user expereince */
+
 function App() {
 
   const [page, setPage] = useState("Home")
