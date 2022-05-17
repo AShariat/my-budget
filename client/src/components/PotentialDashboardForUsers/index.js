@@ -1,5 +1,44 @@
 import React from 'react';
 
+const Style1 = {
+    'display': 'block',
+    'width': '663px',
+    'height': '279px'
+};
+const Style2 = {
+    'position':'absolute',
+    'width':'200%',
+    'height':'200%',
+    'left':0,
+    'top':0
+};
+const Style3 = {
+    'position':'absolute',
+    'left':0,
+    'top':0,
+    'right':0,
+    'bottom':0,
+    'overflow':'hidden',
+    'pointer-events':'none',
+    'visibility':'hidden',
+    'z-index':-1
+};
+const Style4 = {
+    'position':'absolute',
+    'width':'1000000px',
+    'height':'1000000px',
+    'left':0,
+    'top':0
+};
+const Style5 = {
+    'position': 'absolute',
+    'inset': '0px',
+    'overflow': 'hidden',
+    'pointer-events': 'none',
+    'visibility': 'hidden',
+    'z-index': -1
+};
+
 const PotentialDashboardForUsers = function() {
     return (
         <div class="container-fluid">
@@ -80,7 +119,7 @@ const PotentialDashboardForUsers = function() {
           </div>
         </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"><div class="chartjs-size-monitor" style={Style5}><div class="chartjs-size-monitor-expand" style={Style3}><div style={Style4}></div></div><div class="chartjs-size-monitor-shrink" style={Style3}><div style={Style2}></div></div></div>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -95,7 +134,7 @@ const PotentialDashboardForUsers = function() {
             </div>
           </div>
 
-          <canvas class="my-4 chartjs-render-monitor" id="myChart" width="663" height="279" style="display: block; width: 663px; height: 279px;"></canvas>
+          <canvas class="my-4 chartjs-render-monitor" id="myChart" width="663" height="279" style={Style1}></canvas>
 
           <h2>Section title</h2>
           <div class="table-responsive">
@@ -127,3 +166,5 @@ const PotentialDashboardForUsers = function() {
 };
 
 export default PotentialDashboardForUsers;
+
+/* line */

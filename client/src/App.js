@@ -6,6 +6,7 @@ import About from './components/About';
 import Home from './components/Home';
 import Testimonials from './components/Testimonials';
 import Login from './components/Login';
+import PotentialDashboardForUsers from './components/PotentialDashboardForUsers';
 
 /* check if logged in for conditional render of login page */
 /* if logged in then load different nav-bar for better user expereince */
