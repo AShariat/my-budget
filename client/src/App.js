@@ -26,11 +26,11 @@ function App() {
     } else if (page === 'About') {
       return <About changeFunction={changePage} />
     } else if (page === 'Customer1') {
-      return <Customer1 />
+      return <Customer1 changeFunction={changePage} />
     } else if (page === 'Customer2') {
-      return <Customer2 />
+      return <Customer2 changeFunction={changePage} />
     } else if (page === 'Customer3') {
-      return <Customer3 />
+      return <Customer3 changeFunction={changePage} />
     }
   };
 
