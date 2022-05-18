@@ -28,5 +28,11 @@ const UserInputModal = function () {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
+
+export {
+    UserInputModal
+};
+
+/* likely will make multiple modals for different input types */
