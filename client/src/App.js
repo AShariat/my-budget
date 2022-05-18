@@ -6,6 +6,7 @@ import About from './components/About';
 import Home from './components/Home';
 import Testimonials from './components/Testimonials';
 import Login from './components/Login';
+import { Customer1, Customer2, Customer3 } from './components/IndividualTestimony';
 import PotentialDashboardForUsers from './components/PotentialDashboardForUsers';
 
 /* check if logged in for conditional render of login page */
@@ -17,13 +18,19 @@ function App() {
 
   const renderSection = ()=> {
     if(page === 'Home'){
-      return <Home />
+      return <Home changeFunction={changePage} />
     }else if (page === 'Testimonials'){
-      return <Testimonials />
+      return <Testimonials changeFunction={changePage} />
     } else if (page === 'Login') {
       return <Login />
     } else if (page === 'About') {
-      return <About />
+      return <About changeFunction={changePage} />
+    } else if (page === 'Customer1') {
+      return <Customer1 />
+    } else if (page === 'Customer2') {
+      return <Customer2 />
+    } else if (page === 'Customer3') {
+      return <Customer3 />
     }
   };
 

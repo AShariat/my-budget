@@ -40,6 +40,8 @@ const Style5 = {
 };
 
 const PotentialDashboardForUsers = function() {
+  window.scrollTo(0, 0);
+  
     return (
         <div class="container-fluid">
       <div class="row">
