@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+// format(new Date(), 'MM/dd/yyyy');
+const { format } = require('date-fns');
+
 
 const transactionSchema = new Schema(
   {
@@ -16,7 +19,8 @@ const transactionSchema = new Schema(
     },
     createdAt: {
       type: Date,
-      default: Date.now
+      default: Date.now,
+      get: (createdAtVal) => format(createdAtVal, 'MM/dd/yyyy'),
     },
     username: {
       type: String,
@@ -26,7 +30,12 @@ const transactionSchema = new Schema(
       type: String,
       required: false
     }
+  },
+  {
+  toJSON: {
+    getters: true
   }
+}
 );
 
 const Transaction = model('Transaction', transactionSchema);
