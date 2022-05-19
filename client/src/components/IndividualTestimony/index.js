@@ -84,8 +84,8 @@ const Customer1 = function(props) {
         <p>As you can see, Amirs budget tracker has helped this old couple on their way to a better financial future, and towards a divorce. Thank you again Amir!</p>
       </article>
       <div><p>
-                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-primary text-white my-2">Learn more about us!</a>
-                        <a onClick={() => { props.changeFunction('Testimonials')}} class="btn btn-dark text-white my-2">Read another happy customers thoughts!</a>
+                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-secondary text-white my-2">Learn more about us!</a>
+                        <a onClick={() => { props.changeFunction('Testimonials')}} class="btn btn-dark text-white my-2 mx-2">Read another happy customers thoughts!</a>
                         <a onClick={() => { props.changeFunction('Login')}} class="btn btn-secondary text-white my-2">Login, or sign up!</a>
                     </p></div>
       <br></br><br></br>
@@ -150,8 +150,8 @@ const Customer2 = function(props) {
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
       </article>
       <div><p>
-                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-primary text-white my-2">Learn more about us!</a>
-                        <a onClick={() => { props.changeFunction('Testimonials')}} class="btn btn-dark text-white my-2">Read another happy customers thoughts!</a>
+                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-secondary text-white my-2">Learn more about us!</a>
+                        <a onClick={() => { props.changeFunction('Testimonials')}} class="btn btn-dark text-white my-2 mx-2">Read another happy customers thoughts!</a>
                         <a onClick={() => { props.changeFunction('Login')}} class="btn btn-secondary text-white my-2">Login, or sign up!</a>
                     </p></div>
       <br></br><br></br>
@@ -216,8 +216,8 @@ const Customer3 = function(props) {
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
       </article>
       <div><p>
-                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-primary text-white my-2">Learn more about us!</a>
-                        <a onClick={() => { props.changeFunction('Testimonials')}} class="btn btn-dark text-white my-2">Read another happy customers thoughts!</a>
+                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-secondary text-white my-2">Learn more about us!</a>
+                        <a onClick={() => { props.changeFunction('Testimonials')}} class="btn btn-dark text-white my-2 mx-2">Read another happy customers thoughts!</a>
                         <a onClick={() => { props.changeFunction('Login')}} class="btn btn-secondary text-white my-2">Login, or sign up!</a>
                     </p></div>
       <br></br><br></br>

@@ -16,8 +16,8 @@ function Testimonials(props) {
                     <h1 class="jumbotron-heading">Why are Irish bankers so successful? Because their capital’s always Dublin!</h1>
                     <p class="lead text-muted">Below you will find some made up statements from our made up customers! They love our app, and you should too!</p>
                     <p>
-                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-primary my-2 mx-2">Learn more about us!</a>
-                        <a onClick={() => { props.changeFunction('Login')}} class="btn btn-secondary my-2 mx-2">Login, or sign up!</a>
+                        <a onClick={() => { props.changeFunction('About')}} class="btn btn-light my-2 mx-2">Learn more about us!</a>
+                        <a onClick={() => { props.changeFunction('Login')}} class="btn btn-secondary text-white my-2 mx-2">Login, or sign up!</a>
                     </p>
                 </div>
             </section>
