@@ -8,6 +8,10 @@ const bankingImage = {
   'justify-content': 'center'
 };
 
+const transparency = {
+  opacity: 0.5
+}
+
 function Home(props) {
   window.scrollTo(0, 0);
   
@@ -15,8 +19,9 @@ function Home(props) {
     <section>
 
       <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style={bankingImage}>
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-          <h1 className="display-4 font-weight-normal border border-dark bg-light rounded bg-opacity-50">Not interested in online banking?</h1>
+        <div class="col-md-5 p-lg-5 mx-auto my-5 opacity-50">
+          
+          <h1 className="display-4 font-weight-normal border border-dark bg-light rounded">Not interested in online banking?</h1>
           <p class="lead font-weight-normal border border-dark bg-light">You are not a loan!</p>
 
           <div class="btn-group bg-light rounded">
