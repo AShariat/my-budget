@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
@@ -26,12 +26,7 @@ const userSchema = new Schema(
         ref: 'Transaction'
       }
     ]
-  },
-  // {
-  //   toJSON: {
-  //     virtuals: true
-  //   }
-  // }
+  }
 );
 
 // set up pre-save middleware to create password

@@ -11,7 +11,7 @@ const typeDefs = gql`
   type Transaction {
     _id: ID
     amount: Int
-    mainCat: String
+    category: String
     subCat: String
     createdAt: String
     username: String

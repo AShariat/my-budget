@@ -1,13 +1,12 @@
 const { Schema, model } = require('mongoose');
-const taxesSchema = require('./Transactions/Housing/Taxes');
 
 const transactionSchema = new Schema(
   {
     amount: {
-      type: Int,
+      type: Number,
       required: 'You must indicate an amount',
     },
-    mainCat: {
+    category: {
       type: String,
       required: true
     },
@@ -28,4 +27,8 @@ const transactionSchema = new Schema(
       required: false
     }
   }
-)
+);
+
+const Transaction = model('Transaction', transactionSchema);
+
+module.exports = Transaction;
