@@ -22,10 +22,6 @@ const transactionSchema = new Schema(
       default: Date.now,
       get: (createdAtVal) => format(createdAtVal, 'MM/dd/yyyy'),
     },
-    username: {
-      type: String,
-      required: true
-    },
     description: {
       type: String,
       required: false
