@@ -6,6 +6,8 @@ const TwentyFiveOnSides = {
 };
 
 function Login() {
+    window.scrollTo(0, 0);
+    
     return (
         <section class="text-center">
             <form class="form-signin column">

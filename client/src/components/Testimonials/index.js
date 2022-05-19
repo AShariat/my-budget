@@ -6,13 +6,14 @@ const heightWidthBlock = {
 };
 
 function Testimonials(props) {
+    window.scrollTo(0, 0);
 
     return (
         <main role="main">
 
             <section class="jumbotron text-center">
                 <div class="container">
-                    <h1 class="jumbotron-heading">Some funny financial statement</h1>
+                    <h1 class="jumbotron-heading">Why are Irish bankers so successful? Because their capital’s always Dublin!</h1>
                     <p class="lead text-muted">Below you will find some made up statements from our made up customers! They love our app, and you should too!</p>
                     <p>
                         <a onClick={() => { props.changeFunction('About')}} class="btn btn-primary my-2">Learn more about us!</a>
@@ -32,7 +33,7 @@ function Testimonials(props) {
                                     <p class="card-text">This is one of the schmucks we scammed out of all his money-- I mean, one of our loyal customers, who's VERY happy with us!</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Read his story!</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" onClick={() => {props.changeFunction('Customer1')}}>Read their story!</button>
                                         </div>
                                     </div>
                                 </div>
@@ -46,7 +47,7 @@ function Testimonials(props) {
                                     <p class="card-text">This is one of the schmucks we scammed out of all his money-- I mean, one of our loyal customers, who's VERY happy with us!</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Read his story!</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" onClick={() => {props.changeFunction('Customer2')}}>Read her story!</button>
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +61,7 @@ function Testimonials(props) {
                                     <p class="card-text">This is one of the schmucks we scammed out of all his money-- I mean, one of our loyal customers, who's VERY happy with us!</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Read his story!</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary" onClick={() => {props.changeFunction('Customer3')}}>Read his story!</button>
                                         </div>
                                     </div>
                                 </div>
