@@ -31,7 +31,7 @@ function App() {
     } else if (page === 'Customer2') {
       return <Customer2 changeFunction={changePage} />
     } else if (page === 'Customer3') {
-      return <UserInputModal changeFunction={changePage} />
+      return <Customer3 changeFunction={changePage} />
     }
   };
 

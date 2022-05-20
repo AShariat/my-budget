@@ -56,20 +56,20 @@ const UserInputModal = function () {
     );
 };
 
-const LoggedOutUserModal = function () {
+const LoggedOutUserModal = function (props) {
     return (
         <div class="modal modal-sheet position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSheet">
             <div class="modal-dialog" role="document">
                 <div class="modal-content rounded-6 shadow">
                     <div class="modal-header border-bottom-0">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title">Timed out!</h5>
+                        <button type="button" class="btn-close rounded bg-light" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
                     </div>
                     <div class="modal-body py-0">
-                        <p>This is a modal sheet, a variation of the modal that docs itself to the bottom of the viewport like the newer share sheets in iOS.</p>
+                        <p>Unfortunately the current user has been logged out due to time constraints. Please, return to the login menu should you desire to log in and continue work.</p>
                     </div>
                     <div class="modal-footer flex-column border-top-0">
-                        <button type="button" class="btn btn-lg btn-primary w-100 mx-0 mb-2">Save changes</button>
+                        <button type="button" class="btn btn-lg btn-primary w-100 mx-0 mb-2" onClick={() => { props.changeFunction('Login')}}>Login</button>
                         <button type="button" class="btn btn-lg btn-light w-100 mx-0" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -82,7 +82,3 @@ export {
     UserInputModal,
     LoggedOutUserModal
 };
-
-/* likely will make multiple modals for different input types */
-
-/* loggededoutusermodal for if a user auth token is invalid, reroute to login page */
