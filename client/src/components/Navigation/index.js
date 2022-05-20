@@ -27,3 +27,5 @@ function Navigation(props) {
 };
 
 export default Navigation;
+
+/* add a ternary to check if logged in and if logged in have the user see a log out button instead? */
