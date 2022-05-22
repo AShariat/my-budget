@@ -1,5 +1,9 @@
 import './App.css';
 import { useState } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -15,7 +19,15 @@ import { UserInputModal, LoggedOutUserModal, SignUpModal } from './components/Mo
 
 function App() {
 
-  const [page, setPage] = useState("Home")
+  const [page, setPage] = useState("Home");
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function afterOpenModal() {
+    setIsOpen(true);
+  };
+  function closeModal() {
+    setIsOpen(false);
+  };
 
   const renderSection = ()=> {
     if(page === 'Home'){

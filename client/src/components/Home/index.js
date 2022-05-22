@@ -18,19 +18,19 @@ function Home(props) {
   return (
     <section>
 
-      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style={bankingImage}>
-        <div class="col-md-5 p-lg-5 mx-auto my-5 opacity-50">
+      <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style={bankingImage}>
+        <div className="col-md-5 p-lg-5 mx-auto my-5 opacity-50">
           
           <h1 className="display-4 font-weight-normal border border-dark bg-light rounded">Not interested in online banking?</h1>
-          <p class="lead font-weight-normal border border-dark bg-light">You are not a loan!</p>
+          <p className="lead font-weight-normal border border-dark bg-light">You are not a loan!</p>
 
-          <div class="btn-group bg-light rounded">
-              <button type="button" class="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Login')}}>Login or Sign-up!</button>
+          <div className="btn-group bg-light rounded">
+              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Login')}}>Login or Sign-up!</button>
           </div>
 
         </div>
-        <div class="product-device box-shadow d-none d-md-block"></div>
-        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+        <div className="product-device box-shadow d-none d-md-block"></div>
+        <div className="product-device product-device-2 box-shadow d-none d-md-block"></div>
       </div>
 
     </section>

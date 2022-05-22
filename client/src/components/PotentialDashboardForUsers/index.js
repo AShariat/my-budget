@@ -44,32 +44,32 @@ const PotentialDashboardForUsers = function (props) {
   window.scrollTo(0, 0);
 
   return (
-    <div class="container-fluid">
-      <div class="row">
+    <div className="container-fluid">
+      <div className="row">
 
-        <main role="main" class="col-md-12 ml-sm-auto col-lg-12 pt-3 px-4"><div class="chartjs-size-monitor" style={Style5}><div class="chartjs-size-monitor-expand" style={Style3}><div style={Style4}></div></div><div class="chartjs-size-monitor-shrink" style={Style3}><div style={Style2}></div></div></div>
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-              <div class="dropdown mr-2">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <main role="main" className="col-md-12 ml-sm-auto col-lg-12 pt-3 px-4"><div className="chartjs-size-monitor" style={Style5}><div className="chartjs-size-monitor-expand" style={Style3}><div style={Style4}></div></div><div className="chartjs-size-monitor-shrink" style={Style3}><div style={Style2}></div></div></div>
+          <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 className="h2">Dashboard</h1>
+            <div className="btn-toolbar mb-2 mb-md-0">
+              <div className="btn-group mr-2">
+              <div className="dropdown mr-2">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Dropdown button
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a className="dropdown-item" href="#">Action</a>
+                  <a className="dropdown-item" href="#">Another action</a>
+                  <a className="dropdown-item" href="#">Something else here</a>
                 </div>
               </div>
-                <div class="btn btn-sm btn-outline-secondary bg-secondary text-light mr-3 rounded">Current User Amount</div>
-                <button class="btn btn-sm btn-outline-secondary rounded" onClick={() => { props.changeFunction('UserInputModal') }}>Add more?</button>
+                <div className="btn btn-sm btn-outline-secondary bg-secondary text-light mr-3 rounded">Current User Amount</div>
+                <button className="btn btn-sm btn-outline-secondary rounded" onClick={() => { props.changeFunction('UserInputModal') }}>Add more?</button>
               </div>
             </div>
           </div>
 
           {/* pie graph here */}
-          <div class="my-4" id="myChart" width="663" height="279" style={Style1}>
+          <div className="my-4" id="myChart" width="663" height="279" style={Style1}>
             <PieChart
               data={[
                 { title: 'One', value: 30, color: '#E38627' },
@@ -80,8 +80,8 @@ const PotentialDashboardForUsers = function (props) {
           </div>
 
           <h2>Previous Spending Habits</h2>
-          <div class="table-responsive">
-            <table class="table table-striped table-sm">
+          <div className="table-responsive">
+            <table className="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
