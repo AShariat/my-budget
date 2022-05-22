@@ -8,7 +8,7 @@ import Testimonials from './components/Testimonials';
 import Login from './components/Login';
 import { Customer1, Customer2, Customer3 } from './components/IndividualTestimony';
 import PotentialDashboardForUsers from './components/PotentialDashboardForUsers';
-import { UserInputModal, LoggedOutUserModal } from './components/Modal';
+import { UserInputModal, LoggedOutUserModal, SignUpModal } from './components/Modal';
 
 /* check if logged in for conditional render of login page */
 /* if logged in then load different nav-bar for better user expereince */
@@ -31,7 +31,7 @@ function App() {
     } else if (page === 'Customer2') {
       return <Customer2 changeFunction={changePage} />
     } else if (page === 'Customer3') {
-      return <Customer3 changeFunction={changePage} />
+      return <SignUpModal changeFunction={changePage} />
     }
   };
 

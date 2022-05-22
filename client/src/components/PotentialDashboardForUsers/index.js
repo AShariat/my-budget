@@ -63,7 +63,7 @@ const PotentialDashboardForUsers = function (props) {
                 </div>
               </div>
                 <div class="btn btn-sm btn-outline-secondary bg-secondary text-light mr-3 rounded">Current User Amount</div>
-                <button class="btn btn-sm btn-outline-secondary" onClick={() => { props.changeFunction('UserInputModal') }}>Add more?</button>
+                <button class="btn btn-sm btn-outline-secondary rounded" onClick={() => { props.changeFunction('UserInputModal') }}>Add more?</button>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ const PotentialDashboardForUsers = function (props) {
                 { title: 'Two', value: 50, color: '#C13C37' },
                 { title: 'Three', value: 20, color: '#6A2135' },
               ]}
-            />
+            /> 
           </div>
 
           <h2>Previous Spending Habits</h2>
@@ -85,10 +85,10 @@ const PotentialDashboardForUsers = function (props) {
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -97,7 +97,7 @@ const PotentialDashboardForUsers = function (props) {
                   <td>Lorem</td>
                   <td>ipsum</td>
                   <td>dolor</td>
-                  <td>sit</td>
+                  <td><button className='btn btn-sm btn-outline-secondary rounded'>click to remove</button></td>
                 </tr>
               </tbody>
             </table>
