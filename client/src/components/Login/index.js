@@ -5,7 +5,7 @@ const TwentyFiveOnSides = {
     'width': '30%'
 };
 
-function Login() {
+function Login(props) {
     window.scrollTo(0, 0);
     
     return (
@@ -19,6 +19,7 @@ function Login() {
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input style={TwentyFiveOnSides} type="password" id="inputPassword" class="form-control my-2" placeholder="Password" required=""></input>
                 <button style={TwentyFiveOnSides}  class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+                <button style={TwentyFiveOnSides}  class="btn btn-lg btn-secondary btn-block" type="submit" onClick={() => {props.changeFunction('Signup')}}>Sign Up</button>
 
                 <p class="mt-3 mb-3 text-muted">© 2022-2022</p>
             </form>
