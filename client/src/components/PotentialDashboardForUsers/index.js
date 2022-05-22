@@ -110,4 +110,4 @@ const PotentialDashboardForUsers = function (props) {
 
 export default PotentialDashboardForUsers;
 
-/* line */
+/* read transaction for dashboard items */
