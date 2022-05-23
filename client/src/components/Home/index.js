@@ -37,6 +37,7 @@ function Home(props) {
           </p>
 
           <div className="btn-group bg-light rounded">
+<<<<<<< HEAD
             <button
               type="button"
               className="btn btn-sm btn-outline-secondary"
@@ -47,6 +48,21 @@ function Home(props) {
               Login or Sign-up!
             </button>
           </div>
+=======
+              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Login')}}>Login!</button>
+              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Signup')}}>Sign-up!</button>
+
+          </div>
+          <br></br>
+          <div className="btn-group bg-dark rounded m-2">
+              <button type="button" className="btn btn-lg btn-outline-secondary text-light"  onClick={() => { props.changeFunction('About')}}>About us</button>
+          </div>
+          <div className="btn-group bg-dark rounded m-2">
+              <button type="button" className="btn btn-lg btn-outline-secondary text-light"  onClick={() => { props.changeFunction('Testimonials')}}>Read our testimonials</button>
+          </div>
+          
+
+>>>>>>> 598e8d46ecf823ec159fa7d26bfceb859ec75c33
         </div>
         <div className="product-device box-shadow d-none d-md-block"></div>
         <div className="product-device product-device-2 box-shadow d-none d-md-block"></div>
