@@ -21,6 +21,11 @@ function Home(props) {
   const { loading, data } = useQuery(QUERY_TRANSACTIONS);
   const transactions = data?.transactions || [];
 
+  var total = 0;
+  for (var i = 0; i < transactions.length; i++) {
+    total += transactions[i].amount;
+  }
+
   return (
     <section>
       <div
@@ -48,7 +53,7 @@ function Home(props) {
             <button
               type="button"
               className="btn btn-sm btn-outline-secondary"
-              onClick={() => console.log(transactions)}
+              onClick={() => console.log(total)}
             >
               Test
             </button>
