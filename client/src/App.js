@@ -10,6 +10,7 @@ import About from './components/About';
 import Home from './components/Home';
 import Testimonials from './components/Testimonials';
 import Login from './components/Login';
+import Signup from './components/Signup'
 import { Customer1, Customer2, Customer3 } from './components/IndividualTestimony';
 import PotentialDashboardForUsers from './components/PotentialDashboardForUsers';
 import { UserInputModal, LoggedOutUserModal, SignUpModal } from './components/Modal';
@@ -29,10 +30,10 @@ function App() {
     setIsOpen(false);
   };
 
-  const renderSection = ()=> {
-    if(page === 'Home'){
+  const renderSection = () => {
+    if (page === 'Home') {
       return <Home changeFunction={changePage} />
-    }else if (page === 'Testimonials'){
+    } else if (page === 'Testimonials') {
       return <Testimonials changeFunction={changePage} />
     } else if (page === 'Login') {
       return <Login />
@@ -44,6 +45,8 @@ function App() {
       return <Customer2 changeFunction={changePage} />
     } else if (page === 'Customer3') {
       return <Customer3 changeFunction={changePage} />
+    } else if (page === 'Signup') {
+      return <Signup changeFunction={changePage} />
     }
   };
 
