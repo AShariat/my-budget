@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-// format(new Date(), 'MM/dd/yyyy');
 const { format } = require("date-fns");
 
 const transactionSchema = new Schema(
