@@ -11,3 +11,21 @@ export const QUERY_TRANSACTIONS = gql`
     }
   }
 `;
+
+export const QUERY_USER = gql`
+  query User($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      transactions {
+        _id
+        amount
+        category
+        createdAt
+        username
+        description
+      }
+    }
+  }
+`;
