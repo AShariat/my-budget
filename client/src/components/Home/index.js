@@ -11,10 +11,6 @@ const bankingImage = {
   "justify-content": "center",
 };
 
-const transparency = {
-  opacity: 0.5,
-};
-
 function Home(props) {
   window.scrollTo(0, 0);
 
@@ -53,7 +49,7 @@ function Home(props) {
             <button
               type="button"
               className="btn btn-sm btn-outline-secondary"
-              onClick={() => console.log(total)}
+              onClick={() => console.log(total, loading)}
             >
               Test
             </button>
@@ -64,10 +60,6 @@ function Home(props) {
       </div>
     </section>
   );
-}
-
-{
-  /* an a tag that renders the login page */
 }
 
 export default Home;
