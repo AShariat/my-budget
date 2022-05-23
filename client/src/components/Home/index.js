@@ -25,7 +25,9 @@ function Home(props) {
           <p className="lead font-weight-normal border border-dark bg-light">You are not a loan!</p>
 
           <div className="btn-group bg-light rounded">
-              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Login')}}>Login or Sign-up!</button>
+              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Login')}}>Login!</button>
+              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Signup')}}>Sign-up!</button>
+
           </div>
           <br></br>
           <div className="btn-group bg-dark rounded m-2">
