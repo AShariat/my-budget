@@ -23,8 +23,6 @@ function Signup(props) {
                 username: formState.username,
                 email: formState.email,
                 password: formState.password,
-                // firstName: formState.firstName,
-                // lastName: formState.lastName,
             },
         });
         const token = mutationResponse.data.addUser.token;
@@ -82,7 +80,11 @@ function Signup(props) {
                     onChange={handleChange}
                 />
 
-                <button style={TwentyFiveOnSides} id='signUpModal' className="btn btn-lg btn-secondary btn-block" type="submit" onClick={() => { props.changeFunction('Signup') }}>Sign Up</button>
+                <button 
+                style={TwentyFiveOnSides} 
+                id='signUpModal' 
+                className="btn btn-lg btn-secondary btn-block" 
+                type="submit">Sign Up</button>
 
                 <p className="mt-3 mb-3 text-muted">My Budget © 2022-2022</p>
             </form>

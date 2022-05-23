@@ -83,14 +83,12 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-
       <div>
         <Navigation changeFunction={changePage}></Navigation>
         {renderSection()}
         <Footer />
       </div>
     </ApolloProvider>
-
   );
 };
 
