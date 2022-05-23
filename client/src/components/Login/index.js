@@ -42,10 +42,11 @@ function Login(props) {
                 <img className="mb-4 mt-4" src="https://www.svgrepo.com/show/32717/currency-exchange.svg" alt="" width="72" height="72" />
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
 
-                <label for="inputEmail" className="sr-only">Email address</label>
+                <label className="sr-only" htmlFor='email'>Email address</label>
                 <input
                     style={TwentyFiveOnSides}
-                    type="email" id="inputEmail"
+                    type="email" 
+                    id="email"
                     className="form-control my-2"
                     placeholder="Email address"
                     required=""
@@ -54,11 +55,11 @@ function Login(props) {
                     onChange={handleChange}
                 />
 
-                <label for="inputPassword" className="sr-only">Password</label>
+                <label className="sr-only" htmlFor='password'>Password</label>
                 <input
                     style={TwentyFiveOnSides}
                     type="password"
-                    id="inputPassword"
+                    id="password"
                     className="form-control my-2"
                     placeholder="Password"
                     required=""
