@@ -91,6 +91,7 @@ const PotentialDashboardForUsers = function (props) {
                   <th>Category</th>
                   <th>Description</th>
                   <th>Price</th>
+                  <th>Created at</th>
                   <th></th>
                 </tr>
               </thead>
@@ -100,6 +101,7 @@ const PotentialDashboardForUsers = function (props) {
                   <td>Lorem</td>
                   <td>ipsum</td>
                   <td>dolor</td>
+                  <td>domine</td>
                   <td><button className='btn btn-sm btn-outline-secondary rounded'>click to remove</button></td>
                 </tr>
               </tbody>
