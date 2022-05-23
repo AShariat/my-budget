@@ -17,7 +17,7 @@ function About(props) {
 
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 mb-5">
             <h2>Forbes Review!</h2>
             <p>With more than 924,737 ratings on the App Store and Google Play, Amirs Budget-Tracker dwarfs its competitors in terms of reported user experience. Amirs Budget-Tracker earns a spot on Forbes Advisors’ Best Budgeting Apps and is worth strong consideration for helping meet your budgeting needs.</p>
             <p><a className="btn btn-secondary" href="https://www.forbes.com/advisor/banking/mint-budgeting-app-review/" role="button">View Review Details »</a></p>
@@ -34,7 +34,7 @@ function About(props) {
           </div>
         </div>
       </div>
-<br></br><br></br>
+      <br></br>
       </section>
   )
 };
