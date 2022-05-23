@@ -4,6 +4,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -30,6 +38,25 @@ function App() {
     setIsOpen(false);
   };
 
+  const httpLink = createHttpLink({
+    uri: '/graphql',
+  });
+
+  const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('id_token');
+    return {
+      headers: {
+        ...headers,
+        authorization: token ? `Bearer ${token}` : '',
+      },
+    };
+  });
+
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+  });
+
   const renderSection = () => {
     if (page === 'Home') {
       return <Home changeFunction={changePage} />
@@ -55,11 +82,15 @@ function App() {
   };
 
   return (
-    <div>
-      <Navigation changeFunction={changePage}></Navigation>
-      {renderSection()}
-      <Footer />
-    </div>
+    <ApolloProvider client={client}>
+
+      <div>
+        <Navigation changeFunction={changePage}></Navigation>
+        {renderSection()}
+        <Footer />
+      </div>
+    </ApolloProvider>
+
   );
 };
 
