@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-const Dashboard = (props) => {
+const Dash = (props) => {
   const { id: token } = useParams();
   console.log(token);
 
@@ -22,4 +22,4 @@ const Dashboard = (props) => {
   );
 };
 
-export default Dashboard;
+export default Dash;

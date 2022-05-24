@@ -3,7 +3,9 @@ import { useQuery } from "@apollo/client";
 import { QUERY_TRANSACTIONS } from "../utils/queries";
 import TransactionList from "../components/TransactionList";
 
-const Home = () => {
+import { useParams } from "react-router-dom";
+
+const Dashboard = () => {
   const { loading, data } = useQuery(QUERY_TRANSACTIONS);
   const transactions = data?.transactions || [];
   console.log(transactions);
@@ -14,18 +16,16 @@ const Home = () => {
   console.log(total);
 
   return (
-    <main>
-      <div className="flex-row justify-space-between">
-        <div className="col-12 mb-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <TransactionList transactions={transactions} />
-          )}
-        </div>
+    <div className="container-fluid">
+      <div className="col-12 mb-3">
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <TransactionList transactions={transactions} />
+        )}
       </div>
-    </main>
+    </div>
   );
 };
 
-export default Home;
+export default Dashboard;

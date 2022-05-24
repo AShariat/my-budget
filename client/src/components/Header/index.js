@@ -6,20 +6,32 @@ function Header() {
   function navRender() {
     if (Auth.loggedIn()) {
       return (
-        <nav>
-          <Link to="/" onClick={() => Auth.logout()}>
-            Logout
-          </Link>
+        <nav className="container d-flex">
+          <h4>
+            <Link to="/" onClick={() => Auth.logout()}>
+              Logout
+            </Link>
+          </h4>
         </nav>
       );
     }
     return (
-      <nav>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/about">About Us</Link>
-        <Link to="/testimonials">Testimonials</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Signup</Link>
+      <nav className="container d-flex">
+        <h4>
+          <Link to="/dashboard">Dashboard</Link>
+        </h4>
+        <h4>
+          <Link to="/about">About Us</Link>
+        </h4>
+        <h4>
+          <Link to="/testimonials">Testimonials</Link>
+        </h4>
+        <h4>
+          <Link to="/login">Login</Link>
+        </h4>
+        <h4>
+          <Link to="/signup">Signup</Link>
+        </h4>
       </nav>
     );
   }

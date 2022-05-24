@@ -1,22 +1,14 @@
 import React from "react";
-// const neverUnderline = {
-//     'text-decoration': 'none',
-//     'color': 'black'
-// };
 
 function Footer() {
   return (
-    <footer className="flex-row">
-      <nav className="navbar fixed-bottom navbar-light bg-light justify-content-center">
-        <a
-          // style={neverUnderline}
-          href="https://github.com/AShariat/my-budget"
-        >
-          <p>
-            Check out our code! <i className="bi bi-github"></i>
-          </p>
+    <footer className="container-fluid">
+      <h6 className="text-center">
+        Check Out Our Code!{" "}
+        <a href="https://github.com/AShariat/my-budget">
+          <i className="bi bi-github"></i>
         </a>
-      </nav>
+      </h6>
     </footer>
   );
 }
