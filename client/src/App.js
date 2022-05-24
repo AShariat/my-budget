@@ -8,13 +8,13 @@ import {
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-// import Home from "./components/Home";
+import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 import NoMatch from "./pages/NoMatch";
 
 const httpLink = createHttpLink({
@@ -39,6 +39,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/about" element={<About />} />
               <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>

@@ -18,10 +18,12 @@ function TransactionList({ transactions }) {
                 className="text-dark"
               >
                 {transaction.username}
-              </Link>{" "}
-              transaction on {transaction.createdAt}
+              </Link>
             </p>
             <div className="card-body">
+              <p>{transaction.category}</p>
+              <p>{transaction.amount}</p>
+              <p>{transaction.createdAt}</p>
               <Link to={`/transaction/${transaction._id}`}>
                 <p>{transaction.description}</p>
               </Link>

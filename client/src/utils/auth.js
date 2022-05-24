@@ -1,5 +1,4 @@
 import decode from "jwt-decode";
-import Dashboard from "../pages/Dashboard";
 
 class AuthService {
   getProfile() {
@@ -28,7 +27,6 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem("id_token", idToken);
-    Dashboard(idToken);
     window.location.assign(`/dashboard/${idToken}`);
   }
 

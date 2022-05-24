@@ -1,25 +1,31 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_TRANSACTIONS } from "../utils/queries";
+import TransactionList from "../components/TransactionList";
 
-const Dashboard = (props) => {
-  const { id: token } = useParams();
-  console.log(token);
+const Home = () => {
+  const { loading, data } = useQuery(QUERY_TRANSACTIONS);
+  const transactions = data?.transactions || [];
+  console.log(transactions);
+  var total = 0;
+  for (var i = 0; i < transactions.length; i++) {
+    total += transactions[i].amount;
+  }
+  console.log(total);
 
   return (
-    <div>
-      <div className="card mb-3">
-        <p className="card-header">
-          <span style={{ fontWeight: 700 }} className="text-light">
-            Username
-          </span>{" "}
-          thought on createdAt
-        </p>
-        <div className="card-body">
-          <p>Thought Text</p>
+    <main>
+      <div className="flex-row justify-space-between">
+        <div className="col-12 mb-3">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <TransactionList transactions={transactions} />
+          )}
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
-export default Dashboard;
+export default Home;

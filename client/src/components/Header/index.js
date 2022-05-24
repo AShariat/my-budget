@@ -6,7 +6,7 @@ function Header() {
   function navRender() {
     if (Auth.loggedIn()) {
       return (
-        <nav className="text-center">
+        <nav>
           <Link to="/" onClick={() => Auth.logout()}>
             Logout
           </Link>
@@ -14,7 +14,8 @@ function Header() {
       );
     }
     return (
-      <nav className="text-center">
+      <nav>
+        <Link to="/dashboard">Dashboard</Link>
         <Link to="/about">About Us</Link>
         <Link to="/testimonials">Testimonials</Link>
         <Link to="/login">Login</Link>
@@ -24,15 +25,13 @@ function Header() {
   }
 
   return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <h1>
-          <Link to="/">
-            <i className="bi bi-currency-exchange"></i> My Budget
-          </Link>
-        </h1>
-        {navRender()}
-      </div>
+    <header className="container d-flex">
+      <h1>
+        <Link to="/">
+          <i className="bi bi-currency-exchange"></i> My Budget
+        </Link>
+      </h1>
+      {navRender()}
     </header>
   );
 }
