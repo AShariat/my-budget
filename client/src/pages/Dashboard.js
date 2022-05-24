@@ -3,8 +3,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_TRANSACTIONS } from "../utils/queries";
 import TransactionList from "../components/TransactionList";
 
-import { useParams } from "react-router-dom";
-
 const Dashboard = () => {
   const { loading, data } = useQuery(QUERY_TRANSACTIONS);
   const transactions = data?.transactions || [];
