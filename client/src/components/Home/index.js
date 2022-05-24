@@ -1,7 +1,7 @@
 import React from "react";
 
 const bankingLaptop =
-  "https://media.istockphoto.com/photos/man-using-online-banking-with-credit-card-on-touch-screen-device-picture-id962095876?k=20&m=962095876&s=612x612&w=0&h=yzt6qDr5tnD-vMBMiM_IMYXVPCRnfULnrFy_54w0ooM=";
+  "https://static.wixstatic.com/media/11062b_6ed150d7b33842c5938db540a502ea15~mv2.jpg";
 const bankingImage = {
   backgroundImage: `url(${bankingLaptop})`,
   "background-size": "cover",
