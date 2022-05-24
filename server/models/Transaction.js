@@ -20,6 +20,10 @@ const transactionSchema = new Schema(
       type: String,
       required: false,
     },
+    username: {
+      type: String,
+      required: true,
+    },
   },
   {
     toJSON: {

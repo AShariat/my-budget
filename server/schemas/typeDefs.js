@@ -38,6 +38,7 @@ const typeDefs = gql`
       category: String!
       description: String
     ): Transaction
+    deleteTransaction(transactionId: ID!): Transaction
   }
 `;
 

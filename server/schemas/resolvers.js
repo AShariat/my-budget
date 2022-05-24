@@ -75,6 +75,18 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    deleteTransaction: async (parent, { transactionId }, context) => {
+      if (context.user) {
+        const transaction = await Transaction.findByIdAndRemove(
+          { _id: transactionId },
+          { $pull: { transactions: transactionId } }
+        );
+
+        return transaction;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 
