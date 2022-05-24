@@ -9,7 +9,7 @@ function Navigation(props) {
           props.changeFunction("Home");
         }}
       >
-        <i className="bi bi-currency-exchange"></i>My Budget
+        <i className="bi bi-currency-exchange"></i> My Budget
       </a>
       <button
         className="navbar-toggler"

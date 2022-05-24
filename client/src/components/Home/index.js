@@ -14,13 +14,13 @@ import { QUERY_TRANSACTIONS, QUERY_USER } from "../../utils/queries";
 function Home(props) {
   window.scrollTo(0, 0);
 
-  const { loading, data } = useQuery(QUERY_TRANSACTIONS);
-  const transactions = data?.transactions || [];
-  console.log(loading);
-  var total = 0;
-  for (var i = 0; i < transactions.length; i++) {
-    total += transactions[i].amount;
-  }
+  // const { loading, data } = useQuery(QUERY_TRANSACTIONS);
+  // const transactions = data?.transactions || [];
+  // console.log(loading);
+  // var total = 0;
+  // for (var i = 0; i < transactions.length; i++) {
+  //   total += transactions[i].amount;
+  // }
 
   return (
     <section>
@@ -33,11 +33,10 @@ function Home(props) {
             Not interested in online banking?
           </h1>
           <p className="lead font-weight-normal border border-dark bg-light">
-            ${total}
+            {/* ${total} */}
           </p>
 
           <div className="btn-group bg-light rounded">
-<<<<<<< HEAD
             <button
               type="button"
               className="btn btn-sm btn-outline-secondary"
@@ -45,24 +44,41 @@ function Home(props) {
                 props.changeFunction("Login");
               }}
             >
-              Login or Sign-up!
+              Login!
             </button>
-          </div>
-=======
-              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Login')}}>Login!</button>
-              <button type="button" className="btn btn-sm btn-outline-secondary"  onClick={() => { props.changeFunction('Signup')}}>Sign-up!</button>
-
+            <button
+              type="button"
+              className="btn btn-sm btn-outline-secondary"
+              onClick={() => {
+                props.changeFunction("Signup");
+              }}
+            >
+              Sign-up!
+            </button>
           </div>
           <br></br>
           <div className="btn-group bg-dark rounded m-2">
-              <button type="button" className="btn btn-lg btn-outline-secondary text-light"  onClick={() => { props.changeFunction('About')}}>About us</button>
+            <button
+              type="button"
+              className="btn btn-lg btn-outline-secondary text-light"
+              onClick={() => {
+                props.changeFunction("About");
+              }}
+            >
+              About us
+            </button>
           </div>
           <div className="btn-group bg-dark rounded m-2">
-              <button type="button" className="btn btn-lg btn-outline-secondary text-light"  onClick={() => { props.changeFunction('Testimonials')}}>Read our testimonials</button>
+            <button
+              type="button"
+              className="btn btn-lg btn-outline-secondary text-light"
+              onClick={() => {
+                props.changeFunction("Testimonials");
+              }}
+            >
+              Read our testimonials
+            </button>
           </div>
-          
-
->>>>>>> 598e8d46ecf823ec159fa7d26bfceb859ec75c33
         </div>
         <div className="product-device box-shadow d-none d-md-block"></div>
         <div className="product-device product-device-2 box-shadow d-none d-md-block"></div>
