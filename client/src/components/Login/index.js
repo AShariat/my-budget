@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
-import { LOGIN } from "../../utils/mutations";
+import { LOGIN_USER } from "../../utils/mutations";
 
 // const TwentyFiveOnSides = {
 //     'margin-left': '35%',
@@ -13,7 +13,7 @@ function Login(props) {
   window.scrollTo(0, 0);
 
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error }] = useMutation(LOGIN);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
