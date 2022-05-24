@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import {
   ApolloProvider,
   ApolloClient,
@@ -15,8 +15,8 @@ import Signup from "./components/Signup";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import Dashboard from "./components/Dashboard";
-
 import Footer from "./components/Footer";
+import Total from "./components/Total";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -43,6 +43,7 @@ function App() {
               <Route path="/users/:_id?" element={<Dashboard />} />
             </Routes>
           </div>
+          <Total />
           <Footer />
         </div>
       </Router>
