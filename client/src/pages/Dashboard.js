@@ -2,8 +2,9 @@ import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
-import { QUERY_USER, QUERY_ME, QUERY_TRANSACTIONS } from "../utils/queries";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import TransactionList from "../components/TransactionList";
+import TransactionForm from "../components/TransactionForm";
 
 const Dashboard = () => {
   const { username: userParam } = useParams();
@@ -39,6 +40,9 @@ const Dashboard = () => {
         ) : (
           <TransactionList transactions={user.transactions} />
         )}
+      </div>
+      <div className="mb-3">
+        {!userParam && <TransactionForm username={user} />}
       </div>
     </div>
   );

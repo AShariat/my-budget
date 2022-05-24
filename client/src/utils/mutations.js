@@ -25,22 +25,22 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_TRANSACTION = gql`
-  mutation addTransaction(
-    $amount: Int!
+  mutation AddTransaction(
     $category: String!
+    $amount: String!
     $description: String
   ) {
     addTransaction(
-      amount: $amount
       category: $category
+      amount: $amount
       description: $description
     ) {
-      amount
-      category
-      createdAt
-      description
       _id
       username
+      category
+      amount
+      description
+      createdAt
     }
   }
 `;

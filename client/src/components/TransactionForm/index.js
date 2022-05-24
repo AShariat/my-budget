@@ -1,56 +1,82 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TRANSACTION } from "../../utils/mutations";
-import { QUERY_TRANSACTIONS, QUERY_ME } from "../../utils/queries";
+// import { QUERY_TRANSACTIONS, QUERY_ME } from "../../utils/queries";
 
-const TransactionForm = () => {
-  const [amount, setAmount] = useState("");
-  const [characterCount, setCharacterCount] = useState(0);
-
-  const [addTransaction, { error }] = useMutation(ADD_TRANSACTION, {
-    update(cache, { data: { addTransaction } }) {
-      // could potentially not exist yet, so wrap in a try/catch
-      try {
-        // update me array's cache
-        const { me } = cache.readQuery({ query: QUERY_ME });
-        cache.writeQuery({
-          query: QUERY_ME,
-          data: {
-            me: { ...me, transactions: [...me.transactions, addTransaction] },
-          },
-        });
-      } catch (e) {
-        console.warn("First Transaction Insertion by User!");
-      }
-
-      // update thought array's cache
-      const { transactions } = cache.readQuery({ query: QUERY_TRANSACTIONS });
-      cache.writeQuery({
-        query: QUERY_TRANSACTIONS,
-        data: { transactions: [addTransaction, ...transactions] },
-      });
-    },
+const TransactionForm = (username) => {
+  const user = username.username.username;
+  const [formState, setFormState] = useState({
+    amount: "",
+    category: "",
+    description: "",
   });
 
+  const [addTransaction, { loading, error }] = useMutation(ADD_TRANSACTION);
+
+  if (loading) return "Submitting...";
+  if (error) return `Submission Error! ${error.message}`;
+
+  // const [amount, setAmount] = useState("");
+  // const [category, setCategory] = useState("");
+  // const [description, setDescription] = useState("");
+
+  // const [addTransaction, { error }] = useMutation(ADD_TRANSACTION);
+
+  // const [addTransaction, { error }] = useMutation(ADD_TRANSACTION, {
+  //   update(cache, { data: { addTransaction } }) {
+  //     try {
+  //       const { me } = cache.readQuery({ query: QUERY_ME });
+  //       cache.writeQuery({
+  //         query: QUERY_ME,
+  //         data: {
+  //           me: { ...me, transactions: [...me.transactions, addTransaction] },
+  //         },
+  //       });
+  //     } catch (e) {
+  //       console.warn("First Transaction Insertion by User!");
+  //     }
+
+  //     const { transactions } = cache.readQuery({ query: QUERY_TRANSACTIONS });
+  //     cache.writeQuery({
+  //       query: QUERY_TRANSACTIONS,
+  //       data: { transactions: [addTransaction, ...transactions] },
+  //     });
+  //   },
+  // });
+
+  // const handleAmountChange = (event) => setAmount(event.target.value);
+  // const handleCategoryChange = (event) => setCategory(event.target.value);
+  // const handleDescriptionChange = (event) => setDescription(event.target.value);
+
   const handleChange = (event) => {
-    if (event.target.value.length <= 280) {
-      setAmount(event.target.value);
-      setCharacterCount(event.target.value.length);
-    }
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      // add thought to database
+      console.log(formState);
+      console.log(user);
+      // console.log(formState.amount, formState.category, formState.description);
       await addTransaction({
-        variables: { amount },
+        variables: {
+          ...formState,
+          // amount: formState.amount,
+          // category: formState.category,
+          // description: formState.description,
+        },
       });
 
-      // clear form value
-      setAmount("");
-      setCharacterCount(0);
+      setFormState({ amount: "", category: "", description: "" });
+      // setAmount("");
+      // setCategory("");
+      // setDescription("");
     } catch (e) {
       console.error(e);
     }
@@ -58,22 +84,56 @@ const TransactionForm = () => {
 
   return (
     <div>
-      <p
-        className={`m-0 ${characterCount === 280 || error ? "text-error" : ""}`}
-      >
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something Went Wrong...</span>}
-      </p>
       <form
         className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
       >
-        <textarea
-          placeholder="Here's a new thought..."
-          value={amount}
+        <input
+          className="form-input"
+          placeholder="Amount"
+          name="amount"
+          type="amount"
+          id="amount"
+          value={formState.amount}
+          onChange={handleChange}
+        />
+        <input
+          className="form-input"
+          placeholder="Category"
+          name="category"
+          type="category"
+          id="category"
+          value={formState.category}
+          onChange={handleChange}
+        />
+        <input
+          className="form-input"
+          placeholder="Description"
+          name="description"
+          type="description"
+          id="description"
+          value={formState.description}
+          onChange={handleChange}
+        />
+
+        {/* <textarea
+          placeholder="Amount"
+          value={formState.amount}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
+        <textarea
+          placeholder="Category"
+          value={formState.category}
+          className="form-input col-12 col-md-9"
+          onChange={handleChange}
+        ></textarea>
+        <textarea
+          placeholder="Description"
+          value={formState.description}
+          className="form-input col-12 col-md-9"
+          onChange={handleChange}
+        ></textarea> */}
         <button className="btn col-12 col-md-3" type="submit">
           Submit
         </button>

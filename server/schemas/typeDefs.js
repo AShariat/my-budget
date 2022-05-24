@@ -35,8 +35,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addTransaction(
       category: String!
-      amount: Int!
-      description: String!
+      amount: String!
+      description: String
     ): Transaction
     deleteTransaction(transactionId: ID!): Transaction
   }

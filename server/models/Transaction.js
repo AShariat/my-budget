@@ -11,7 +11,7 @@ const transactionSchema = new Schema({
     required: true,
   },
   amount: {
-    type: Number,
+    type: String,
     required: "You Must Indicate an Amount!",
   },
   description: {
