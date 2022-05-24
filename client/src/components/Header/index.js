@@ -10,7 +10,6 @@ const Header = () => {
             <i className="bi bi-currency-exchange"></i> My Budget
           </h1>
         </Link>
-
         <nav className="text-center">
           <Link to="/about">About</Link>
           <Link to="/testimonials">Testimonials</Link>

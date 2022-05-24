@@ -7,7 +7,6 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { setContext } from "@apollo/client/link/context";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -15,6 +14,8 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
+import Dashboard from "./components/Dashboard";
+
 import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
@@ -39,6 +40,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/about" element={<About />} />
               <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/users/:_id?" element={<Dashboard />} />
             </Routes>
           </div>
           <Footer />
