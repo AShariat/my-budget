@@ -1,3 +1,7 @@
+// integrate Apollo into the front end
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import { useState } from 'react';
 import React from 'react';
@@ -13,6 +17,17 @@ import Login from './components/Login';
 import { Customer1, Customer2, Customer3 } from './components/IndividualTestimony';
 import PotentialDashboardForUsers from './components/PotentialDashboardForUsers';
 import { UserInputModal, LoggedOutUserModal, SignUpModal } from './components/Modal';
+
+// establish new link to the GraphQL server
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+// instantiate the Apollo Client instance and create the connection to the API endpoint
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
 
 /* check if logged in for conditional render of login page */
 /* if logged in then load different nav-bar for better user expereince */
@@ -43,8 +58,8 @@ function App() {
     } else if (page === 'Customer2') {
       return <Customer2 changeFunction={changePage} />
     } else if (page === 'Customer3') {
-      return <Customer3 changeFunction={changePage} />
-    }
+      return <PotentialDashboardForUsers changeFunction={changePage} />
+    } 
   };
 
   const changePage = (page) => {
@@ -52,11 +67,19 @@ function App() {
   };
 
   return (
+    <ApolloProvider client={client}>
+    {/* <Router> */}
     <div>
+      {/* <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} /> */}
       <Navigation changeFunction={changePage}></Navigation>
       {renderSection()}
+      {/* </Routes> */}
       <Footer />
     </div>
+    {/* </Router> */}
+    </ApolloProvider>
   );
 };
 

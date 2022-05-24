@@ -13,10 +13,10 @@ const transactionSchema = new Schema(
       type: String,
       required: true
     },
-    subCat: {
-      type: String,
-      required: true
-    },
+    // subCat: {
+    //   type: String,
+    //   required: true
+    // },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -25,6 +25,10 @@ const transactionSchema = new Schema(
     description: {
       type: String,
       required: false
+    }, 
+    username: {
+      type: String,
+      required: true
     }
   },
   {

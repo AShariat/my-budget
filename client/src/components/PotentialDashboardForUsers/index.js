@@ -1,6 +1,12 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
 
+import { useParams } from 'react-router-dom';
+
+// integrate Apollo Hooks
+import { useQuery } from '@apollo/client';
+import { QUERY_TRANSACTIONS } from '../../utils/queries';
+
 const Style1 = {
   'display': 'block',
   'width': '663px',
@@ -42,6 +48,14 @@ const Style5 = {
 
 const PotentialDashboardForUsers = function (props) {
   window.scrollTo(0, 0);
+
+  // use useQuery hook to make query request
+  const { loading, data } = useQuery(QUERY_TRANSACTIONS);
+  const transactions = data?.transactions || [];
+  console.log(transactions);
+
+  const {id: transactionId} = useParams();
+  console.log(transactionId);
 
   return (
     <div className="container-fluid">
