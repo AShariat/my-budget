@@ -43,3 +43,31 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  query Me {
+    me {
+      _id
+      username
+      email
+      transactions {
+        _id
+        username
+        category
+        amount
+        description
+        createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_ME_BASIC = gql`
+  query Me {
+    me {
+      _id
+      username
+      email
+    }
+  }
+`;
