@@ -6,8 +6,14 @@ function TransactionList({ transactions }) {
     return <h3>No Transactions Yet!</h3>;
   }
 
+  let total = 0;
+  for (var i = 0; i < transactions.length; i++) {
+    total += transactions[i].amount;
+  }
+
   return (
     <div>
+      <p>{total}</p>
       {transactions &&
         transactions.map((transaction) => (
           <div key={transaction._id} className="card mb-3">
