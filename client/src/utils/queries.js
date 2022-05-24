@@ -34,11 +34,11 @@ export const QUERY_USER = gql`
       email
       transactions {
         _id
-        amount
-        category
-        createdAt
         username
+        category
+        amount
         description
+        createdAt
       }
     }
   }

@@ -34,7 +34,6 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addTransaction(
-      username: String!
       category: String!
       amount: Int!
       description: String!

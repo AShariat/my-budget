@@ -4,7 +4,7 @@ const { format } = require("date-fns");
 const transactionSchema = new Schema({
   username: {
     type: String,
-    required: true,
+    required: false,
   },
   category: {
     type: String,
