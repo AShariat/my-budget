@@ -1,13 +1,27 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_TRANSACTIONS = gql`
-  query transactions($username: String) {
+  query Transactions($username: String) {
     transactions(username: $username) {
       _id
       amount
       category
       createdAt
       description
+      username
+    }
+  }
+`;
+
+export const QUERY_TRANSACTION = gql`
+  query transaction($transactionId: ID!) {
+    transaction(_id: $transactionId) {
+      _id
+      amount
+      category
+      createdAt
+      description
+      username
     }
   }
 `;
