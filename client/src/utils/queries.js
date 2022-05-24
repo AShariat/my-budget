@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import { gql } from '@apollo/client';
-
-export const QUERY_USER = gql`
-  query me($username: String!) {
-    me(username: $username) {
-      username
-      email
-      transactions {
-        amount
-        category
-        subCat
-        createdAt
-=======
 import { gql } from "@apollo/client";
 
 export const QUERY_TRANSACTIONS = gql`
@@ -38,13 +24,8 @@ export const QUERY_USER = gql`
         category
         createdAt
         username
->>>>>>> develop
         description
       }
     }
   }
-<<<<<<< HEAD
 `;
-=======
-`;
->>>>>>> develop
