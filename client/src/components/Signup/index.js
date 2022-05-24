@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+// import { Link } from 'react-router-dom';
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
-import { LOGIN } from "../../utils/mutations";
+import { ADD_USER } from "../../utils/mutations";
 
 // const TwentyFiveOnSides = {
 //     'margin-left': '35%',
@@ -9,23 +10,23 @@ import { LOGIN } from "../../utils/mutations";
 //     'width': '30%'
 // };
 
-function Login(props) {
+function Signup(props) {
   window.scrollTo(0, 0);
 
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error }] = useMutation(LOGIN);
+  const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
-      });
-      const token = mutationResponse.data.login.token;
-      Auth.login(token);
-    } catch (e) {
-      console.log(e);
-    }
+    const mutationResponse = await addUser({
+      variables: {
+        username: formState.username,
+        email: formState.email,
+        password: formState.password,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
 
   const handleChange = (event) => {
@@ -38,7 +39,7 @@ function Login(props) {
 
   return (
     <section className="text-center">
-      <form className="form-signin column" onSubmit={handleFormSubmit}>
+      <form className="form-signup column" onSubmit={handleFormSubmit}>
         <img
           className="mb-4 mt-4"
           src="https://www.svgrepo.com/show/32717/currency-exchange.svg"
@@ -46,7 +47,21 @@ function Login(props) {
           width="72"
           height="72"
         />
-        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <h1 className="h3 mb-3 font-weight-normal">Please sign up</h1>
+
+        <label className="sr-only" htmlFor="username">
+          Username
+        </label>
+        <input
+          // style={TwentyFiveOnSides}
+          type="username"
+          id="username"
+          className="form-control my-2"
+          placeholder="Username"
+          name="username"
+          required=""
+          onChange={handleChange}
+        />
 
         <label className="sr-only" htmlFor="email">
           Email address
@@ -57,9 +72,9 @@ function Login(props) {
           id="email"
           className="form-control my-2"
           placeholder="Email address"
+          name="email"
           required=""
           // autofocus=""
-          name="email"
           onChange={handleChange}
         />
 
@@ -72,21 +87,18 @@ function Login(props) {
           id="password"
           className="form-control my-2"
           placeholder="Password"
-          required=""
           name="password"
+          required=""
           onChange={handleChange}
         />
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null}
+
         <button
           // style={TwentyFiveOnSides}
-          className="btn btn-lg btn-dark btn-block"
+          id="signUpModal"
+          className="btn btn-lg btn-secondary btn-block"
           type="submit"
         >
-          Sign in
+          Sign Up
         </button>
 
         <p className="mt-3 mb-3 text-muted">My Budget © 2022-2022</p>
@@ -95,4 +107,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Signup;

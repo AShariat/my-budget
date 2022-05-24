@@ -1,31 +1,29 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Transaction } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Transaction } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
-        .select('-__v -password')
-        .populate('transactions');
+          .select("-__v -password")
+          .populate("transactions");
 
         return userData;
       }
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
     // get all users
-    users: async() => {
-      return User.find()
-      .select('-__v -password')
-      .populate('transactions')
+    users: async () => {
+      return User.find().select("-__v -password").populate("transactions");
     },
     // get user by username
     user: async (parent, { username }) => {
       return User.findOne({ username })
-        .select('-__v -password')
-        .populate('transactions')
-    }, 
+        .select("-__v -password")
+        .populate("transactions");
+    },
     // find all transactions by username
     transactions: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -34,7 +32,7 @@ const resolvers = {
     // find a single transaction by id
     transaction: async (parent, { _id }) => {
       return Transaction.findOne({ _id });
-    } 
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -47,13 +45,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
@@ -61,7 +59,10 @@ const resolvers = {
     },
     addTransaction: async (parent, args, context) => {
       if (context.user) {
-        const transaction = await Transaction.create({ ...args, username: context.user.username });
+        const transaction = await Transaction.create({
+          ...args,
+          username: context.user.username,
+        });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -72,6 +73,7 @@ const resolvers = {
         return transaction;
       }
 
+<<<<<<< HEAD
       throw new AuthenticationError('You need to be logged in!');
     },
     // deleteTransaction: async(parent, { transactionId }, context) => {
@@ -88,6 +90,11 @@ const resolvers = {
     //   throw new AuthenticationError('You need to be logged in!');
     // }
   }
+=======
+      throw new AuthenticationError("You need to be logged in!");
+    },
+  },
+>>>>>>> develop
 };
 
 module.exports = resolvers;

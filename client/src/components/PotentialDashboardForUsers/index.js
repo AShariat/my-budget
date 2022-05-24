@@ -82,6 +82,8 @@ const PotentialDashboardForUsers = function (props) {
             </div>
           </div>
 
+          <h2>Previous Spending Amount: $8,675,309.00</h2>
+
           {/* pie graph here */}
           <div className="my-4" id="myChart" width="663" height="279" style={Style1}>
             <PieChart
@@ -92,6 +94,7 @@ const PotentialDashboardForUsers = function (props) {
               ]}
             /> 
           </div>
+          <br></br>
 
           <h2>Previous Spending Habits</h2>
           <div className="table-responsive">
