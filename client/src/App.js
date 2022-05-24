@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import {
   ApolloProvider,
@@ -9,14 +8,14 @@ import {
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Home from "./components/Home";
+// import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
-import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
-import Total from "./components/Total";
+import Home from "./pages/Home";
+import NoMatch from "./pages/NoMatch";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -40,10 +39,9 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/about" element={<About />} />
               <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/users/:_id?" element={<Dashboard />} />
+              <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>
-          <Total />
           <Footer />
         </div>
       </Router>
