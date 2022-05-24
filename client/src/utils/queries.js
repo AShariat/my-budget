@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_TRANSACTIONS = gql`
-  query transactions($username: String!) {
+  query Transactions($username: String) {
     transactions(username: $username) {
       _id
       amount
