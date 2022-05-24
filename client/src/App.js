@@ -11,10 +11,10 @@ import { setContext } from "@apollo/client/link/context";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import NoMatch from "./pages/NoMatch";
 
