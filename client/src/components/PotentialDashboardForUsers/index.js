@@ -1,5 +1,7 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
+import { useQuery, useMutation } from '@apollo/client'
+import { QUERY_USER } from '../../utils/queries';
 
 const Style1 = {
   'display': 'block',
@@ -40,19 +42,16 @@ const Style5 = {
   'z-index': -1
 };
 
-/* import { useQuery } from '@apollo/client';
-import { QUERY_USER } from '../../utils/queries'; */
-
 const PotentialDashboardForUsers = function (props) {
   window.scrollTo(0, 0);
 
-/*   const { loading, data } = useQuery(QUERY_USER);
+  const { loading, data } = useQuery(QUERY_USER);
 
   const user = data?.user || {};
 
   if (loading) {
     return <div>currently loading...</div>
-  } else */
+  } else
 
   return (
     <div className="container-fluid">
@@ -79,7 +78,7 @@ const PotentialDashboardForUsers = function (props) {
             </div>
           </div>
 
-          <h2>{/* {user.username} */}'s Previous Spending Amount: $8,675,309.00</h2>
+          <h2>{user.username}'s Previous Spending Amount: $8,675,309.00</h2>
 
           {/* pie graph here */}
           <div className="my-4" id="myChart" width="663" height="279" style={Style1}>
