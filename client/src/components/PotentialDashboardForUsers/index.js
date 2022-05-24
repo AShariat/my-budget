@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
-import { useQuery, useMutation } from '@apollo/client'
-import { QUERY_USER } from '../../utils/queries';
+import { useQuery } from '@apollo/client'
+import { QUERY_ME } from '../../utils/queries';
 
 const Style1 = {
   'display': 'block',
@@ -22,7 +22,7 @@ const Style3 = {
   'right': 0,
   'bottom': 0,
   'overflow': 'hidden',
-  'pointer-events': 'none',
+  pointerEvents: 'none',
   'visibility': 'hidden',
   'z-index': -1
 };
@@ -37,15 +37,24 @@ const Style5 = {
   'position': 'absolute',
   'inset': '0px',
   'overflow': 'hidden',
-  'pointer-events': 'none',
+  pointerEvents: 'none',
   'visibility': 'hidden',
-  'z-index': -1
+  zIndex: -1
 };
+
+const perfectOne = {
+  display: 'block',
+  width: '663px',
+  height: '279px'
+};
+
+/* use perfectOne as example for others, use camelCase when there are two words like 'margin-left to marginLeft */
+
 
 const PotentialDashboardForUsers = function (props) {
   window.scrollTo(0, 0);
 
-  const { loading, data } = useQuery(QUERY_USER);
+  const { loading, data } = useQuery(QUERY_ME);
 
   const user = data?.user || {};
 
@@ -81,7 +90,7 @@ const PotentialDashboardForUsers = function (props) {
           <h2>{user.username}'s Previous Spending Amount: $8,675,309.00</h2>
 
           {/* pie graph here */}
-          <div className="my-4" id="myChart" width="663" height="279" style={Style1}>
+          <div className="my-4" id="myChart" width="663" height="279" style={perfectOne}>
             <PieChart
               data={[
                 { title: 'One', value: 30, color: '#E38627' },

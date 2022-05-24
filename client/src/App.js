@@ -78,7 +78,7 @@ function App() {
     } else if (page === "Customer2") {
       return <Customer2 changeFunction={changePage} />;
     } else if (page === "Customer3") {
-      return <Customer3 changeFunction={changePage} />;
+      return <PotentialDashboardForUsers changeFunction={changePage} />;
     } else if (page === "Signup") {
       return <Signup changeFunction={changePage} />;
     }
