@@ -9,17 +9,8 @@ const transactionSchema = new Schema(
     },
     category: {
       type: String,
-<<<<<<< HEAD
-      required: true
-    },
-    // subCat: {
-    //   type: String,
-    //   required: true
-    // },
-=======
       required: true,
     },
->>>>>>> develop
     createdAt: {
       type: Date,
       default: Date.now,
@@ -27,17 +18,12 @@ const transactionSchema = new Schema(
     },
     description: {
       type: String,
-<<<<<<< HEAD
-      required: false
-    }, 
+      required: false,
+    },
     username: {
       type: String,
       required: true
     }
-=======
-      required: false,
-    },
->>>>>>> develop
   },
   {
     toJSON: {

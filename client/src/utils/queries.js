@@ -1,30 +1,30 @@
-<<<<<<< HEAD
-import { gql } from '@apollo/client';
-
-export const QUERY_TRANSACTIONS = gql`
-  query transactions($username: String) {
-    thoughts(username: $username) {
-=======
 import { gql } from "@apollo/client";
 
 export const QUERY_TRANSACTIONS = gql`
-  query transactions($username: String) {
+  query transactions($username: String!) {
     transactions(username: $username) {
->>>>>>> develop
       _id
       amount
       category
       createdAt
       description
-<<<<<<< HEAD
       username
     }
   }
 `;
-=======
-    }
+
+// query a single transaction
+export const QUERY_TRANSACTION = gql`
+query transaction($transactionId: ID!){
+  transaction(_id: $transactionId) {
+    _id
+    amount
+    category
+    createdAt
+    description
+    username
   }
-`;
+}`;
 
 export const QUERY_USER = gql`
   query User($username: String!) {
@@ -43,4 +43,3 @@ export const QUERY_USER = gql`
     }
   }
 `;
->>>>>>> develop

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { gql } from '@apollo/client';
-=======
 import { gql } from "@apollo/client";
 
 export const LOGIN = gql`
@@ -24,4 +21,24 @@ export const ADD_USER = gql`
     }
   }
 `;
->>>>>>> develop
+
+export const ADD_TRANSACTION = gql `
+mutation addTransaction($amount: Int!, $category: String!, $description: String){
+  addTransaction(amount: $amount, category: $category, description: $description) {
+    amount
+    category
+    createdAt
+    description
+    _id
+    username
+  }
+}
+`;
+
+export const DELETE_TRANSACTION = gql`
+mutation deleteTransaction($transactionId: ID!){
+  deleteTransaction(transactionId: $transactionId) {
+    _id
+  }
+}
+`;
