@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Customer1 = function (props) {
   window.scrollTo(0, 0);
@@ -99,30 +100,13 @@ const Customer1 = function (props) {
       </article>
       <div>
         <p>
-          <a
-            onClick={() => {
-              props.changeFunction("About");
-            }}
-            className="btn btn-secondary text-white my-2"
-          >
-            Learn more about us!
-          </a>
-          <a
-            onClick={() => {
-              props.changeFunction("Testimonials");
-            }}
-            className="btn btn-dark text-white my-2 mx-2"
-          >
-            Read another happy customers thoughts!
-          </a>
-          <a
-            onClick={() => {
-              props.changeFunction("Login");
-            }}
-            className="btn btn-secondary text-white my-2"
-          >
-            Login, or sign up!
-          </a>
+          <Link className="btn btn-secondary text-white my-2" to="/">
+          Click here to learn more about My-Budget!
+          </Link>
+
+          <Link className="btn btn-dark text-white my-2 mx-2" to="/login">
+          Click here to Login or Sign-Up!
+          </Link>
         </p>
       </div>
       <br></br>
@@ -206,30 +190,13 @@ const Customer2 = function (props) {
       </article>
       <div>
         <p>
-          <a
-            onClick={() => {
-              props.changeFunction("About");
-            }}
-            className="btn btn-secondary text-white my-2"
-          >
-            Learn more about us!
-          </a>
-          <a
-            onClick={() => {
-              props.changeFunction("Testimonials");
-            }}
-            className="btn btn-dark text-white my-2 mx-2"
-          >
-            Read another happy customers thoughts!
-          </a>
-          <a
-            onClick={() => {
-              props.changeFunction("Login");
-            }}
-            className="btn btn-secondary text-white my-2"
-          >
-            Login, or sign up!
-          </a>
+        <Link className="btn btn-secondary text-white my-2" to="/">
+          Click here to learn more about My-Budget!
+          </Link>
+
+          <Link className="btn btn-dark text-white my-2 mx-2" to="/login">
+          Click here to Login or Sign-Up!
+          </Link>
         </p>
       </div>
       <br></br>
@@ -313,30 +280,13 @@ const Customer3 = function (props) {
       </article>
       <div>
         <p>
-          <a
-            onClick={() => {
-              props.changeFunction("About");
-            }}
-            className="btn btn-secondary text-white my-2"
-          >
-            Learn more about us!
-          </a>
-          <a
-            onClick={() => {
-              props.changeFunction("Testimonials");
-            }}
-            className="btn btn-dark text-white my-2 mx-2"
-          >
-            Read another happy customers thoughts!
-          </a>
-          <a
-            onClick={() => {
-              props.changeFunction("Login");
-            }}
-            className="btn btn-secondary text-white my-2"
-          >
-            Login, or sign up!
-          </a>
+        <Link className="btn btn-secondary text-white my-2" to="/">
+          Click here to learn more about My-Budget!
+          </Link>
+
+          <Link className="btn btn-dark text-white my-2 mx-2" to="/login">
+          Click here to Login or Sign-Up!
+          </Link>
         </p>
       </div>
       <br></br>
