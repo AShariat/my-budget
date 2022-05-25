@@ -35,8 +35,8 @@ function Testimonials(props) {
                 />
                 <div className="card-body">
                   <p className="card-text">
-                    This is one of the schmucks we scammed out of all his
-                    money-- I mean, one of our loyal customers, who's VERY happy
+                    This is an elderly couple of the schmucks we scammed out of all their
+                    money-- I mean, some of our loyal customers, who's VERY happy
                     with us!
                   </p>
                   <div className="d-flex justify-content-between align-items-center">
@@ -67,7 +67,7 @@ function Testimonials(props) {
                 />
                 <div className="card-body">
                   <p className="card-text">
-                    This is one of the schmucks we scammed out of all his
+                    This is one of the schmucks we scammed out of all her
                     money-- I mean, one of our loyal customers, who's VERY happy
                     with us!
                   </p>

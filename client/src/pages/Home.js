@@ -8,6 +8,7 @@ const imageStyle = {
 }
 
 function Home() {
+
   return (
     <div className="flex-column">
         <div className="jumbotron mt-2 mx-3 d-flex flex-column align-items-center" id='hero' alt='finance image'>
