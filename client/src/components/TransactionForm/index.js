@@ -33,7 +33,6 @@ const TransactionForm = (username) => {
   //     });
   //   },
   // });
-  if (error) return `Submission Error! ${error.message}`;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -123,6 +122,11 @@ const TransactionForm = (username) => {
           Add Transaction
         </button>
       </form>
+      {error && (
+        <h3 className="text-danger text-center mt-5">
+          Submission Failed! {error.message}
+        </h3>
+      )}
     </div>
   );
 };

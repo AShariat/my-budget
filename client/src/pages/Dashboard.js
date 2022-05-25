@@ -20,15 +20,14 @@ const Dashboard = () => {
   }
 
   if (loading) {
-    return <h3>Loading...</h3>;
+    return <h3 className="text-center mt-5">Loading...</h3>;
   }
 
   if (!user?.username) {
     return (
-      <h4 className="m-5">
-        You need to be logged in to see this page. Use the navigation links
-        above to sign up or log in!
-      </h4>
+      <h3 className="text-center mt-5">
+        You Need To Be Logged In To See This Page!
+      </h3>
     );
   }
 
@@ -36,12 +35,6 @@ const Dashboard = () => {
     <div className="flex-column">
       <TransactionForm username={user} />
       <TransactionList transactions={user.transactions} />
-      {/* {!userParam && <TransactionForm username={user} />}
-      {loading ? (
-        <h3>Loading...</h3>
-      ) : (
-        <TransactionList transactions={user.transactions} />
-      )} */}
     </div>
   );
 };
