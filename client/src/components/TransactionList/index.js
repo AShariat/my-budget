@@ -8,36 +8,104 @@ function TransactionList({ transactions }) {
 
   let total = 0;
   for (var i = 0; i < transactions.length; i++) {
-    total += transactions[i].amount;
+    if (transactions[i].category === "Income") {
+      total += transactions[i].amount;
+    } else {
+      total -= transactions[i].amount;
+    }
   }
 
   return (
-    <div>
-      <div>
-        <h3>Your Remaining Budget is ${total}</h3>
-      </div>
-      {transactions &&
-        transactions.map((transaction) => (
-          <div key={transaction._id} className="card mb-3">
-            {/* <p className="card-header">
-              <Link
-                to={`/dashboard/${transaction.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-dark"
-              >
-                {transaction.username}
-              </Link>
-            </p> */}
-            <div className="card-body">
-              <p>{transaction.category}</p>
-              <p>{transaction.amount}</p>
-              <p>{transaction.createdAt}</p>
-              <Link to={`/transaction/${transaction._id}`}>
-                <p>{transaction.description}</p>
-              </Link>
-            </div>
-          </div>
-        ))}
+    <div className="container-fluid">
+      <h3 className="col text-center mb-5 text-primary">
+        Your Remaining Budget is ${total}
+      </h3>
+      <table className="col table">
+        <thead>
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        {transactions &&
+          transactions.map((transaction) => (
+            <tbody key={transaction._id} className="col mb-2">
+              {transaction.category === "Income" ? (
+                <tr>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.category}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      ${transaction.amount}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.createdAt}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.description}
+                    </Link>
+                  </td>
+                </tr>
+              ) : (
+                <tr>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.category}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      ${transaction.amount}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.createdAt}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.description}
+                    </Link>
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          ))}
+      </table>
     </div>
   );
 }

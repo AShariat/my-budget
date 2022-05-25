@@ -9,35 +9,41 @@ const Header = () => {
   };
 
   return (
-    <header className="container d-flex justify-content-md-between">
+    <header>
       <h1>
-        <Link to="/">
-          <i className="bi bi-currency-exchange"></i> My Budget
+        <Link className="text-white" to="/">
+          <i className="bi bi-currency-exchange text-white"></i> My Budget
         </Link>
       </h1>
-      <nav className="text-center d-inline-flex p-2 align-items-end">
+      <nav className="text-center d-flex align-items-center">
         {Auth.loggedIn() ? (
           <>
             <h4 className="px-3">
-              <Link to="/dashboard">Dashboard</Link>
+              <Link className="text-white bg-dark p-1 rounded" to="/dashboard">
+                Dashboard
+              </Link>
             </h4>
-            <a href="/" onClick={logout}>
-              <h4 className="px-3">Logout</h4>
-            </a>
+            <h4 className="px-3">
+              <a
+                className="text-white bg-dark p-1 rounded"
+                href="/"
+                onClick={logout}
+              >
+                Logout
+              </a>
+            </h4>
           </>
         ) : (
           <>
             <h4 className="px-3">
-              <Link to="/about">About Us</Link>
+              <Link className="text-white bg-dark p-1 rounded" to="/login">
+                Login
+              </Link>
             </h4>
             <h4 className="px-3">
-              <Link to="/testimonials">Testimonials</Link>
-            </h4>
-            <h4 className="px-3">
-              <Link to="/login">Login</Link>
-            </h4>
-            <h4 className="px-3">
-              <Link to="/signup">Signup</Link>
+              <Link className="text-white bg-dark p-1 rounded" to="/signup">
+                Signup
+              </Link>
             </h4>
           </>
         )}

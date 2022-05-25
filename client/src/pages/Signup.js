@@ -38,48 +38,41 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-content-center mb-4 mt-5">
-      <div className="col-12 w-50 mx-auto">
-        <div className="card">
-          <h4 className="card-header bg-light">Sign Up</h4>
-          <div className="card-body">
-            <form className="d-flex flex-column w-75 mx-auto my-2" onSubmit={handleFormSubmit}>
-              <input
-                className="form-input my-2"
-                placeholder="Your username"
-                name="username"
-                type="username"
-                id="username"
-                value={formState.username}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input my-2"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input my-2"
-                placeholder="******"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className="btn btn-primary d-block w-100 my-2" type="submit">
-                Submit
-              </button>
-            </form>
-            {error && <div>Sign Up Failed!</div>}
-          </div>
-        </div>
-      </div>
-    </main>
+    <div className="container-fluid my-5 w-75">
+      <form className="container-fluid" onSubmit={handleFormSubmit}>
+        <input
+          className="col mb-2"
+          placeholder="Your Username"
+          name="username"
+          type="username"
+          id="username"
+          value={formState.username}
+          onChange={handleChange}
+        />
+        <input
+          className="col mb-2"
+          placeholder="Your Email"
+          name="email"
+          type="email"
+          id="email"
+          value={formState.email}
+          onChange={handleChange}
+        />
+        <input
+          className="col mb-2"
+          placeholder="Your Password"
+          name="password"
+          type="password"
+          id="password"
+          value={formState.password}
+          onChange={handleChange}
+        />
+        <button className="col btn btn-dark" type="submit">
+          Sign Up
+        </button>
+      </form>
+      {error && <div>Sign Up Failed!</div>}
+    </div>
   );
 };
 
