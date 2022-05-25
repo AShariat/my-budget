@@ -27,7 +27,7 @@ export const ADD_USER = gql`
 export const ADD_TRANSACTION = gql`
   mutation AddTransaction(
     $category: String!
-    $amount: String!
+    $amount: Int!
     $description: String
   ) {
     addTransaction(

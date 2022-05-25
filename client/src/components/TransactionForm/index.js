@@ -4,23 +4,13 @@ import { ADD_TRANSACTION } from "../../utils/mutations";
 // import { QUERY_TRANSACTIONS, QUERY_ME } from "../../utils/queries";
 
 const TransactionForm = (username) => {
-  const user = username.username.username;
   const [formState, setFormState] = useState({
     amount: "",
     category: "",
     description: "",
   });
 
-  const [addTransaction, { loading, error }] = useMutation(ADD_TRANSACTION);
-
-  if (loading) return "Submitting...";
-  if (error) return `Submission Error! ${error.message}`;
-
-  // const [amount, setAmount] = useState("");
-  // const [category, setCategory] = useState("");
-  // const [description, setDescription] = useState("");
-
-  // const [addTransaction, { error }] = useMutation(ADD_TRANSACTION);
+  const [addTransaction, { error }] = useMutation(ADD_TRANSACTION);
 
   // const [addTransaction, { error }] = useMutation(ADD_TRANSACTION, {
   //   update(cache, { data: { addTransaction } }) {
@@ -43,10 +33,7 @@ const TransactionForm = (username) => {
   //     });
   //   },
   // });
-
-  // const handleAmountChange = (event) => setAmount(event.target.value);
-  // const handleCategoryChange = (event) => setCategory(event.target.value);
-  // const handleDescriptionChange = (event) => setDescription(event.target.value);
+  if (error) return `Submission Error! ${error.message}`;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -61,22 +48,15 @@ const TransactionForm = (username) => {
     event.preventDefault();
 
     try {
-      console.log(formState);
-      console.log(user);
-      // console.log(formState.amount, formState.category, formState.description);
       await addTransaction({
         variables: {
-          ...formState,
-          // amount: formState.amount,
-          // category: formState.category,
-          // description: formState.description,
+          amount: JSON.parse(formState.amount),
+          category: formState.category,
+          description: formState.description,
         },
       });
 
       setFormState({ amount: "", category: "", description: "" });
-      // setAmount("");
-      // setCategory("");
-      // setDescription("");
     } catch (e) {
       console.error(e);
     }

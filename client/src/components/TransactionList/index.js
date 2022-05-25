@@ -17,7 +17,7 @@ function TransactionList({ transactions }) {
       {transactions &&
         transactions.map((transaction) => (
           <div key={transaction._id} className="card mb-3">
-            <p className="card-header">
+            {/* <p className="card-header">
               <Link
                 to={`/dashboard/${transaction.username}`}
                 style={{ fontWeight: 700 }}
@@ -25,7 +25,7 @@ function TransactionList({ transactions }) {
               >
                 {transaction.username}
               </Link>
-            </p>
+            </p> */}
             <div className="card-body">
               <p>{transaction.category}</p>
               <p>{transaction.amount}</p>
