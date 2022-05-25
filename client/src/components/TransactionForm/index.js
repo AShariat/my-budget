@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TRANSACTION } from "../../utils/mutations";
-// import { QUERY_TRANSACTIONS, QUERY_ME } from "../../utils/queries";
+import { QUERY_ME } from "../../utils/queries";
 
 const TransactionForm = (username) => {
   const [formState, setFormState] = useState({
@@ -10,30 +10,21 @@ const TransactionForm = (username) => {
     description: "",
   });
 
-  const [addTransaction, { error }] = useMutation(ADD_TRANSACTION);
-
-  // const [addTransaction, { error }] = useMutation(ADD_TRANSACTION, {
-  //   update(cache, { data: { addTransaction } }) {
-  //     try {
-  //       const { me } = cache.readQuery({ query: QUERY_ME });
-  //       cache.writeQuery({
-  //         query: QUERY_ME,
-  //         data: {
-  //           me: { ...me, transactions: [...me.transactions, addTransaction] },
-  //         },
-  //       });
-  //     } catch (e) {
-  //       console.warn("First Transaction Insertion by User!");
-  //     }
-
-  //     const { transactions } = cache.readQuery({ query: QUERY_TRANSACTIONS });
-  //     cache.writeQuery({
-  //       query: QUERY_TRANSACTIONS,
-  //       data: { transactions: [addTransaction, ...transactions] },
-  //     });
-  //   },
-  // });
-  if (error) return `Submission Error! ${error.message}`;
+  const [addTransaction, { error }] = useMutation(ADD_TRANSACTION, {
+    update(cache, { data: { addTransaction } }) {
+      try {
+        const { me } = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: {
+            me: { ...me, transactions: [...me.transactions, addTransaction] },
+          },
+        });
+      } catch (e) {
+        console.warn("First Transaction Insertion by User!");
+      }
+    },
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -61,10 +52,6 @@ const TransactionForm = (username) => {
       console.error(e);
     }
   };
-
-  function refreshPage() {
-    window.location.reload(false);
-  }
 
   return (
     <div className="container-fluid w-75 my-5">
@@ -115,14 +102,15 @@ const TransactionForm = (username) => {
           value={formState.description}
           onChange={handleChange}
         />
-        <button
-          className="col btn btn-dark"
-          type="submit"
-          onClick={refreshPage}
-        >
+        <button className="col btn btn-dark" type="submit">
           Add Transaction
         </button>
       </form>
+      {error && (
+        <h3 className="text-danger text-center mt-5">
+          Submission Failed! {error.message}
+        </h3>
+      )}
     </div>
   );
 };

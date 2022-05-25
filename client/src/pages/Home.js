@@ -5,7 +5,19 @@ import Testimonials from "../components/Testimonials";
 function Home() {
   return (
     <div className="flex-column">
-      <div id="hero" className="col mb-2"></div>
+      <div
+        className="jumbotron mt-2 mx-3 d-flex flex-column align-items-center"
+        id="hero"
+        alt="finance image"
+      >
+        <h1 id="opaque" className="m-2 p-2 rounded opacity-25">
+          Don't normally like dealing with banking details?
+        </h1>
+        <h4 id="opaque" className="m-2 p-2 rounded">
+          You are not a loan!
+        </h4>
+      </div>
+
       <About />
       <Testimonials />
     </div>

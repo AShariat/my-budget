@@ -6,7 +6,7 @@ const Customer1 = function (props) {
 
   return (
     <div className="col-md-8">
-      <h3 className="pb-4 mb-4 fst-italic border-bottom">From the Old-Folks</h3>
+      <h3 className="pb-4 mt-2 fst-italic border-bottom">From the Old-Folks</h3>
 
       <article className="blog-post">
         <h2 className="blog-post-title">I didnt know where the money went!</h2>
@@ -120,72 +120,76 @@ const Customer2 = function (props) {
 
   return (
     <div className="col-md-8">
-      <h3 className="pb-4 mb-4 fst-italic border-bottom">From the Firehose</h3>
+      <h3 className="pb-4 mt-2 fst-italic border-bottom">From the Powerful Home of Femininity!</h3>
 
       <article className="blog-post">
-        <h2 className="blog-post-title">Another blog post</h2>
-        <p className="blog-post-meta">December 23, 2020 by Old Couple</p>
+        <h2 className="blog-post-title">A day in the life of... The Queen!</h2>
+        <p className="blog-post-meta">December 23, 2020 by Young Woman</p>
 
         <p>
-          This is some additional paragraph placeholder content. It has been
-          written to fill the available space and show how a longer snippet of
-          text affects the surrounding content. We'll repeat it often to keep
-          the demonstration flowing, so be on the lookout for this exact same
-          string of text.
+          I used to spend my days girl-bossing, slaying and overall being a bad-ass. I would work hard and play hard. I Spent my money on fabulous vacations, makeup pallets and awesome shopping sprees! I had not a care in the world and no one who could stop my stride! But I did have one pitfall... my expenses...
         </p>
         <blockquote>
           <p>
-            Longer quote goes here, maybe with some{" "}
-            <strong>emphasized text</strong> in the middle of it.
+          "I Spent my money on 
+            <strong> fabulous vacations</strong>, makeup pallets and awesome shopping sprees!""
           </p>
         </blockquote>
         <p>
-          This is some additional paragraph placeholder content. It has been
-          written to fill the available space and show how a longer snippet of
-          text affects the surrounding content. We'll repeat it often to keep
-          the demonstration flowing, so be on the lookout for this exact same
-          string of text.
+          Thanks to Amir's 'My-Budget' I was able to defeat the only thing that could stand in my way! Now nothing can stop the ever omniscient, omnipresent and all powerful woman that I am! May the world quiver and shake with fear <strong>KNOWING THEIR DOOM IS SOON UPON THEM. I AM THE LIGHT AND THE DARKNESS, THE ALPHA AND THE OMEGA, THE BEGINNING AND THE END! AND I AM HERE!!!</strong>
         </p>
-        <h3>Example table</h3>
-        <p>And don't forget about tables in these posts:</p>
+        <br></br>
+        <h3>Young Womans spending habits BEFORE My-Budget</h3>
         <table className="table">
           <thead>
             <tr>
               <th>Name</th>
-              <th>Upvotes</th>
-              <th>Downvotes</th>
+              <th>Income</th>
+              <th>Expenditures</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Alice</td>
-              <td>10</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Bob</td>
-              <td>4</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>Charlie</td>
-              <td>7</td>
-              <td>9</td>
+              <td>$10,000.00</td>
+              <td>$11,000.00</td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td>Totals</td>
-              <td>21</td>
-              <td>23</td>
+              <td>$10,000.00</td>
+              <td>$11,000.00</td>
             </tr>
           </tfoot>
         </table>
-
+        <br></br>
+        <h3>Young Womans spending habits AFTER My-Budget</h3>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Income</th>
+              <th>Expenditures</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>$10,000.00</td>
+              <td>$9,999.99</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Totals</td>
+              <td>$10,000.00</td>
+              <td>$9,999.99</td>
+            </tr>
+          </tfoot>
+        </table>
         <p>
-          This is some additional paragraph placeholder content. It's a slightly
-          shorter version of the other highly repetitive body text used
-          throughout.
+          As you can see, Amirs budget tracker has helped this Queen to a better financial situation. Not only that, but he seems to have accidently found the harbinger of the ends times, the one who will bring calamity and destruction to humanity. Thanks Amir!
         </p>
       </article>
       <div>
@@ -210,72 +214,78 @@ const Customer3 = function (props) {
 
   return (
     <div className="col-md-8">
-      <h3 className="pb-4 mb-4 fst-italic border-bottom">From the Firehose</h3>
+      <h3 className="pb-4 mt-2 fst-italic border-bottom">From the BlockChain!</h3>
 
       <article className="blog-post">
-        <h2 className="blog-post-title">Another blog post</h2>
-        <p className="blog-post-meta">December 23, 2020 by Old Couple</p>
+        <h2 className="blog-post-title">From the den of an NFT Artist</h2>
+        <p className="blog-post-meta">December 23, 2020 by Hip Young Dude</p>
 
         <p>
-          This is some additional paragraph placeholder content. It has been
-          written to fill the available space and show how a longer snippet of
-          text affects the surrounding content. We'll repeat it often to keep
-          the demonstration flowing, so be on the lookout for this exact same
-          string of text.
+          I used to spend my days drifting in and out of consiousness. Only spending my waking hours by playing video games and yelling at my mom for more Totinos© pizza rolls. That was before I discovered the amazing world of cryptocurrency and the blockchain! Now I spend my waking hours watching currencies rise and fall, buying the dip when I can and then watching a scammer dump a coin and steal all my invested money away. But boy, am I bad with my finances sometimes!
         </p>
         <blockquote>
           <p>
-            Longer quote goes here, maybe with some{" "}
-            <strong>emphasized text</strong> in the middle of it.
+          "But boy,
+            <strong> am I bad</strong> with my finances sometimes!"
           </p>
         </blockquote>
         <p>
-          This is some additional paragraph placeholder content. It has been
-          written to fill the available space and show how a longer snippet of
-          text affects the surrounding content. We'll repeat it often to keep
-          the demonstration flowing, so be on the lookout for this exact same
-          string of text.
+          This was well before I found Amir's 'My-Budget'! Now I never fail for crypto pump and dump scams! I mean... I do... But I have a better grasp on my budget now, So I can account for my gains and losses!
         </p>
-        <h3>Example table</h3>
-        <p>And don't forget about tables in these posts:</p>
+        <br></br>
+        <h3>Hip Young Dude's Expenditures BEFORE My-Budget</h3>
         <table className="table">
           <thead>
             <tr>
               <th>Name</th>
-              <th>Upvotes</th>
-              <th>Downvotes</th>
+              <th>Income</th>
+              <th>Expenditures</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Alice</td>
-              <td>10</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Bob</td>
-              <td>4</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>Charlie</td>
-              <td>7</td>
-              <td>9</td>
+              <td>Hip Young Dude</td>
+              <td>.05 Bitcoin</td>
+              <td>However much pizza rolls cost?..</td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td>Totals</td>
-              <td>21</td>
-              <td>23</td>
+              <td>.05 Bitcoin</td>
+              <td>However much pizza rolls cost?..</td>
+            </tr>
+          </tfoot>
+        </table>
+        <br></br>
+        <h3>Hip Young Dude's Expenditures AFTER My-Budget</h3>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Income</th>
+              <th>Expenditures</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hip Young Dude</td>
+              <td>.05 Bitcoin</td>
+              <td>However much pizza rolls cost?..</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Totals</td>
+              <td>.05 Bitcoin</td>
+              <td>Still the cost of pizza rolls, but now with coupons</td>
             </tr>
           </tfoot>
         </table>
 
         <p>
-          This is some additional paragraph placeholder content. It's a slightly
-          shorter version of the other highly repetitive body text used
-          throughout.
+          As you can see, Amirs budget tracker has helped this Hip Young Dude on
+          his way to a better financial future. Hopefully, With lot of bitcoins, and maybe a place of his own! Wouldn't Mom be proud... and finally alone! Thanks Amir!
         </p>
       </article>
       <div>
@@ -289,7 +299,6 @@ const Customer3 = function (props) {
           </Link>
         </p>
       </div>
-      <br></br>
       <br></br>
     </div>
   );

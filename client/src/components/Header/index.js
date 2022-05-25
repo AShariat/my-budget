@@ -15,7 +15,7 @@ const Header = () => {
           <i className="bi bi-currency-exchange text-white"></i> My Budget
         </Link>
       </h1>
-      <nav className="text-center d-flex align-items-center">
+      <nav className="text-center my-2 d-flex align-items-center">
         {Auth.loggedIn() ? (
           <>
             <h4 className="px-3">

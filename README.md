@@ -1,7 +1,7 @@
 # My Budget
 
 ### Overview
-This M.E.R.N. full stack application dynamically and safely displays the user's sensitive budgeting information once authenticated. JSON Web Token is utilized for secure authentication. This application was created with the aim to streamline and visualize the user's sensitive budget through user created categories. Bootstrap has been used to make the application's styling responsive to even mobile sizes.
+This M.E.R.N. full stack application dynamically and safely displays the user's sensitive budgeting information once authenticated. JSON Web Token is utilized for secure authentication. This application was created with the aim to streamline and visualize the user's sensitive budget through categories. Bootstrap has been used to make the application's styling responsive to even mobile sizes.
 
 ### Table of Contents
 - [Overview](#overview)
@@ -36,7 +36,6 @@ This M.E.R.N. full stack application dynamically and safely displays the user's 
 * Through the header the user while signed out can view testimonials or an about us page.
 * Once the user signs up and signs in they will be directed to the dashboard.
 * This dashboard is where the signed in user can dynamically and securely enter their budgeting information by category.
-* A dynamically generated graph is provided as a visual to demonstrate the user's budget.
 
 ### Contributors
 - [Kole Ervine](https://github.com/BullMooseDev)
