@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { DELETE_TRANSACTION } from "../../utils/mutations";
 
 function TransactionList({ transactions }) {
+  const [deleteTransaction] = useMutation(DELETE_TRANSACTION);
+
   if (!transactions.length) {
     return <h3 className="text-center mt-5">No Transactions Yet!</h3>;
   }
@@ -20,6 +23,24 @@ function TransactionList({ transactions }) {
     currency: "USD",
   });
 
+  const handleDelete = async (event) => {
+    const transId = event.target.value;
+    event.preventDefault();
+
+    try {
+      const { data } = await deleteTransaction({
+        variables: { transactionId: transId },
+      });
+      refreshPage();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <div className="flex-column">
       <h3 className="text-center mb-5 text-primary">
@@ -32,6 +53,7 @@ function TransactionList({ transactions }) {
             <th scope="col">Amount</th>
             <th scope="col">Date</th>
             <th scope="col">Description</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         {transactions &&
@@ -39,73 +61,39 @@ function TransactionList({ transactions }) {
             <tbody key={transaction._id}>
               {transaction.category === "Income" ? (
                 <tr>
-                  <td>
-                    <Link
-                      className="text-success"
-                      to={`/transaction/${transaction._id}`}
-                    >
-                      {transaction.category}
-                    </Link>
+                  <td className="text-success">{transaction.category}</td>
+                  <td className="text-success">
+                    {currencyFormatter.format(transaction.amount)}
                   </td>
-                  <td>
-                    <Link
-                      className="text-success"
-                      to={`/transaction/${transaction._id}`}
+                  <td className="text-success">{transaction.createdAt}</td>
+                  <td className="text-success">{transaction.description}</td>
+                  <th scope="row">
+                    <button
+                      className="btn btn-warning"
+                      value={transaction._id}
+                      onClick={handleDelete}
                     >
-                      {currencyFormatter.format(transaction.amount)}
-                    </Link>
-                  </td>
-                  <td>
-                    <Link
-                      className="text-success"
-                      to={`/transaction/${transaction._id}`}
-                    >
-                      {transaction.createdAt}
-                    </Link>
-                  </td>
-                  <td>
-                    <Link
-                      className="text-success"
-                      to={`/transaction/${transaction._id}`}
-                    >
-                      {transaction.description}
-                    </Link>
-                  </td>
+                      Delete
+                    </button>
+                  </th>
                 </tr>
               ) : (
                 <tr>
-                  <td>
-                    <Link
-                      className="text-danger"
-                      to={`/transaction/${transaction._id}`}
-                    >
-                      {transaction.category}
-                    </Link>
+                  <td className="text-danger">{transaction.category}</td>
+                  <td className="text-danger">
+                    {currencyFormatter.format(transaction.amount)}
                   </td>
-                  <td>
-                    <Link
-                      className="text-danger"
-                      to={`/transaction/${transaction._id}`}
+                  <td className="text-danger">{transaction.createdAt}</td>
+                  <td className="text-danger">{transaction.description}</td>
+                  <th scope="row">
+                    <button
+                      className="btn btn-warning"
+                      value={transaction._id}
+                      onClick={handleDelete}
                     >
-                      {currencyFormatter.format(transaction.amount)}
-                    </Link>
-                  </td>
-                  <td>
-                    <Link
-                      className="text-danger"
-                      to={`/transaction/${transaction._id}`}
-                    >
-                      {transaction.createdAt}
-                    </Link>
-                  </td>
-                  <td>
-                    <Link
-                      className="text-danger"
-                      to={`/transaction/${transaction._id}`}
-                    >
-                      {transaction.description}
-                    </Link>
-                  </td>
+                      Delete
+                    </button>
+                  </th>
                 </tr>
               )}
             </tbody>
