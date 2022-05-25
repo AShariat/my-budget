@@ -75,7 +75,7 @@ const TransactionForm = (username) => {
           onChange={handleChange}
         />
         <select
-          className="col mb-2"
+          className="col mb-2 text-secondary"
           name="category"
           id="category"
           value={formState.category}
