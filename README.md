@@ -15,7 +15,7 @@ This application dynamically and safely displays the user's sensitive budgeting 
 ![MIT licence](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ### Application Demo
-![My Budget Demo](./client/src/assets/demo/demo.gif)
+![My Budget Demo](./client/src/assets/demo/demo.jpg)
 
 ### Features Used
 | Feature       | Summary                                                                                                  | 
