@@ -16,12 +16,15 @@ header {
   background-attachment: fixed;
   z-index: 9999;
 }
+
 #hero {
-  background-image: url(../src/assets/images/homepage.jpg);
+  background: url(../src/assets/images/homepage.jpg);
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 500px;
+  background-repeat: no-repeat;
+}
+
+#opaque {
+  background: rgb(247, 247, 247, 0.5);
 }
 
 main {
