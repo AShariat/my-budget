@@ -136,7 +136,7 @@ const Customer2 = function (props) {
           </p>
         </blockquote>
         <p>
-          Thanks to Amir's 'My-Budget' I was able to defeat the only thing that could stand in my way! Now nothing can stop the ever omniscient, omnipresent and all powerful woman that I am! May the world quiver and shake with fear <strong>KNOWING THEIR DOOM IS SOON UPON THEM. I AM THE LIGHT AND THE DARKNESS, ALPHA AND OMEGA, THE BEGINNING AND THE END! AND I AM HERE</strong>
+          Thanks to Amir's 'My-Budget' I was able to defeat the only thing that could stand in my way! Now nothing can stop the ever omniscient, omnipresent and all powerful woman that I am! May the world quiver and shake with fear <strong>KNOWING THEIR DOOM IS SOON UPON THEM. I AM THE LIGHT AND THE DARKNESS, THE ALPHA AND THE OMEGA, THE BEGINNING AND THE END! AND I AM HERE!!!</strong>
         </p>
         <br></br>
         <h3>Young Womans spending habits BEFORE My-Budget</h3>
@@ -189,7 +189,7 @@ const Customer2 = function (props) {
           </tfoot>
         </table>
         <p>
-          As you can see, Amirs budget tracker has helped this Queen to a better financial situation. Not only that, but he seems to have accidently found the harbinger of the ends times, who will bring calamity and destruction to humanity. Thanks Amir!
+          As you can see, Amirs budget tracker has helped this Queen to a better financial situation. Not only that, but he seems to have accidently found the harbinger of the ends times, the one who will bring calamity and destruction to humanity. Thanks Amir!
         </p>
       </article>
       <div>
