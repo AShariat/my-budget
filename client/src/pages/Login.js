@@ -33,14 +33,14 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
+    <main className="flex-row justify-content-center mb-4 mt-5">
+      <div className="col-12 w-50 mx-auto">
         <div className="card">
-          <h4 className="card-header">Login</h4>
+          <h4 className="card-header bg-light">Login</h4>
           <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
+            <form className="d-flex flex-column w-75 mx-auto my-2" onSubmit={handleFormSubmit}>
               <input
-                className="form-input"
+                className="form-input my-2"
                 placeholder="Your email"
                 name="email"
                 type="email"
@@ -49,7 +49,7 @@ const Login = (props) => {
                 onChange={handleChange}
               />
               <input
-                className="form-input"
+                className="form-input my-2"
                 placeholder="******"
                 name="password"
                 type="password"
@@ -57,7 +57,7 @@ const Login = (props) => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
+              <button className="btn btn-primary d-block w-100 my-2" type="submit">
                 Submit
               </button>
             </form>

@@ -36,7 +36,7 @@ const typeDefs = gql`
     addTransaction(
       category: String!
       amount: Int!
-      description: String!
+      description: String
     ): Transaction
     deleteTransaction(transactionId: ID!): Transaction
   }
