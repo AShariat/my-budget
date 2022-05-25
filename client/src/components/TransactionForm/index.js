@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TRANSACTION } from "../../utils/mutations";
-// import { QUERY_TRANSACTIONS, QUERY_ME } from "../../utils/queries";
+import { QUERY_ME } from "../../utils/queries";
 
 const TransactionForm = (username) => {
   const [formState, setFormState] = useState({
@@ -10,29 +10,30 @@ const TransactionForm = (username) => {
     description: "",
   });
 
-  const [addTransaction, { error }] = useMutation(ADD_TRANSACTION);
+  // const [addTransaction, { error }] = useMutation(ADD_TRANSACTION);
 
-  // const [addTransaction, { error }] = useMutation(ADD_TRANSACTION, {
-  //   update(cache, { data: { addTransaction } }) {
-  //     try {
-  //       const { me } = cache.readQuery({ query: QUERY_ME });
-  //       cache.writeQuery({
-  //         query: QUERY_ME,
-  //         data: {
-  //           me: { ...me, transactions: [...me.transactions, addTransaction] },
-  //         },
-  //       });
-  //     } catch (e) {
-  //       console.warn("First Transaction Insertion by User!");
-  //     }
+  const [addTransaction, { error }] = useMutation(ADD_TRANSACTION, {
+    update(cache, { data: { addTransaction } }) {
+      try {
+        const { me } = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: {
+            me: { ...me, transactions: [...me.transactions, addTransaction] },
+          },
+        });
+      } catch (e) {
+        console.warn("First Transaction Insertion by User!");
+      }
 
-  //     const { transactions } = cache.readQuery({ query: QUERY_TRANSACTIONS });
-  //     cache.writeQuery({
-  //       query: QUERY_TRANSACTIONS,
-  //       data: { transactions: [addTransaction, ...transactions] },
-  //     });
-  //   },
-  // });
+      // const { transactions } = cache.readQuery({ query: QUERY_TRANSACTIONS });
+
+      // cache.writeQuery({
+      //   query: QUERY_TRANSACTIONS,
+      //   data: { transactions: [addTransaction, ...transactions] },
+      // });
+    }
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -52,7 +53,7 @@ const TransactionForm = (username) => {
           amount: JSON.parse(formState.amount),
           category: formState.category,
           description: formState.description,
-        },
+        }
       });
 
       setFormState({ amount: "", category: "", description: "" });
@@ -61,9 +62,9 @@ const TransactionForm = (username) => {
     }
   };
 
-  function refreshPage() {
-    window.location.reload(false);
-  }
+  // function refreshPage() {
+  //   window.location.reload(false);
+  // }
 
   return (
     <div className="container-fluid w-75 my-5">
@@ -117,7 +118,8 @@ const TransactionForm = (username) => {
         <button
           className="col btn btn-dark"
           type="submit"
-          onClick={refreshPage}
+          // onClick={refreshPage}
+          onSubmit={handleFormSubmit}
         >
           Add Transaction
         </button>
