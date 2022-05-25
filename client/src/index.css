@@ -8,7 +8,7 @@ a:hover {
 header {
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   position: -webkit-sticky;
   position: sticky;
@@ -21,6 +21,7 @@ header {
   background: url(../src/assets/images/homepage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 #opaque {
@@ -28,5 +29,5 @@ header {
 }
 
 main {
-  min-height: 100vh;
+  min-height: 83vh;
 }
