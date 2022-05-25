@@ -37,6 +37,8 @@ const Signup = () => {
     }
   };
 
+  window.scrollTo(0, 0);
+
   return (
     <div className="container-fluid my-5 w-75">
       <form className="container-fluid" onSubmit={handleFormSubmit}>

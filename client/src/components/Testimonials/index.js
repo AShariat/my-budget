@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const heightWidthBlock = {
   height: 225,
@@ -40,15 +41,14 @@ function Testimonials(props) {
                   </p>
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
+                      <Link className="text-white" to="/elderly-finance">
                       <button
                         type="button"
                         className="btn btn-sm btn-outline-secondary"
-                        onClick={() => {
-                          props.changeFunction("Customer1");
-                        }}
                       >
                         Read their story!
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -73,15 +73,14 @@ function Testimonials(props) {
                   </p>
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
+                    <Link className="text-white" to="/female-finance">
                       <button
                         type="button"
                         className="btn btn-sm btn-outline-secondary"
-                        onClick={() => {
-                          props.changeFunction("Customer2");
-                        }}
                       >
                         Read her story!
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -106,15 +105,14 @@ function Testimonials(props) {
                   </p>
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
+                    <Link className="text-white" to="/single-finance">
                       <button
                         type="button"
                         className="btn btn-sm btn-outline-secondary"
-                        onClick={() => {
-                          props.changeFunction("Customer3");
-                        }}
                       >
                         Read his story!
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
