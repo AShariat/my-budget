@@ -1,10 +1,8 @@
 import React from "react";
 
 function About(props) {
-  window.scrollTo(0, 0);
-
   return (
-    <section className="col">
+    <section className="container-fluid">
       <div className="jumbotron">
         <div className="container">
           <h1 className="display-3">Hello, Finance-Fighters!</h1>
@@ -90,8 +88,6 @@ function About(props) {
           </div>
         </div>
       </div>
-      <br></br>
-      <br></br>
     </section>
   );
 }
