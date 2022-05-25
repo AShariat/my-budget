@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import NoMatch from "./pages/NoMatch";
+import { Customer1, Customer2, Customer3 } from './components/IndividualTestimony';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -48,6 +49,9 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="*" element={<NoMatch />} />
+              <Route path="/elderly-finance" element={<Customer1 />} />
+              <Route path="/female-finance" element={<Customer2 />} />
+              <Route path="/single-finance" element={<Customer3 />} />
             </Routes>
           </main>
           <Footer />

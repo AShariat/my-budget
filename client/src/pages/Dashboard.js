@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   if (!user?.username) {
     return (
-      <h4>
+      <h4 className="m-5">
         You need to be logged in to see this page. Use the navigation links
         above to sign up or log in!
       </h4>
@@ -33,13 +33,15 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="container-fluid">
-      {!userParam && <TransactionForm username={user} />}
+    <div className="flex-column">
+      <TransactionForm username={user} />
+      <TransactionList transactions={user.transactions} />
+      {/* {!userParam && <TransactionForm username={user} />}
       {loading ? (
         <h3>Loading...</h3>
       ) : (
         <TransactionList transactions={user.transactions} />
-      )}
+      )} */}
     </div>
   );
 };
