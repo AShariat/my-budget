@@ -13,32 +13,47 @@ function TransactionList({ transactions }) {
 
   return (
     <div>
-      <div>
-        <h3>Your Remaining Budget is ${total}</h3>
-      </div>
-      {transactions &&
-        transactions.map((transaction) => (
-          <div key={transaction._id} className="card mb-3">
-            {/* <p className="card-header">
-              <Link
-                to={`/dashboard/${transaction.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-dark"
-              >
-                {transaction.username}
-              </Link>
-            </p> */}
-            <div className="card-body">
-              <p>{transaction.category}</p>
-              <p>{transaction.amount}</p>
-              <p>{transaction.createdAt}</p>
-              <Link to={`/transaction/${transaction._id}`}>
-                <p>{transaction.description}</p>
-              </Link>
-            </div>
-          </div>
-        ))}
+      <h3>Your Remaining Budget is ${total}</h3>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        {transactions &&
+          transactions.map((transaction) => (
+            <tbody key={transaction._id} className="col mb-2">
+              <tr>
+                <td>{transaction.category}</td>
+                <td>{transaction.amount}</td>
+                <td>{transaction.createdAt}</td>
+                <td>{transaction.description}</td>
+              </tr>
+            </tbody>
+          ))}
+      </table>
     </div>
+    // <div className="container">
+    //   <div>
+    //     <h3>Your Remaining Budget is ${total}</h3>
+    //   </div>
+    //   {transactions &&
+    //     transactions.map((transaction) => (
+    //       <div key={transaction._id} className="col mb-2">
+    //         <div>
+    //           <p>{transaction.category}</p>
+    //           <p>{transaction.amount}</p>
+    //           <p>{transaction.createdAt}</p>
+    //           <Link to={`/transaction/${transaction._id}`}>
+    //             <p>{transaction.description}</p>
+    //           </Link>
+    //         </div>
+    //       </div>
+    //     ))}
+    // </div>
   );
 }
 

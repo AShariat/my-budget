@@ -64,9 +64,9 @@ const TransactionForm = (username) => {
 
   return (
     <div>
-      <form className="d-flex flex-column" onSubmit={handleFormSubmit}>
+      <form className="container" onSubmit={handleFormSubmit}>
         <input
-          className="mb-3"
+          className="col mb-2"
           placeholder="Amount"
           name="amount"
           type="amount"
@@ -75,7 +75,7 @@ const TransactionForm = (username) => {
           onChange={handleChange}
         />
         <select
-          className="mb-3"
+          className="col mb-2"
           name="category"
           id="category"
           value={formState.category}
@@ -100,7 +100,7 @@ const TransactionForm = (username) => {
           <option value="miscellaneous">Miscellaneous</option>
         </select>
         <input
-          className="mb-3"
+          className="col mb-2"
           placeholder="Description"
           name="description"
           type="description"
@@ -108,7 +108,7 @@ const TransactionForm = (username) => {
           value={formState.description}
           onChange={handleChange}
         />
-        <button className="btn btn-primary" type="submit">
+        <button className="col btn btn-dark" type="submit">
           Submit
         </button>
       </form>
