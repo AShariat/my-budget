@@ -16,9 +16,11 @@ function TransactionList({ transactions }) {
   }
 
   return (
-    <div>
-      <h3>Your Remaining Budget is ${total}</h3>
-      <table className="table">
+    <div className="container-fluid">
+      <h3 className="col text-center mb-5 text-primary">
+        Your Remaining Budget is ${total}
+      </h3>
+      <table className="col table">
         <thead>
           <tr>
             <th scope="col">Category</th>
