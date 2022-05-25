@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className="bg-dark">
       <h1>
         <Link className="text-white" to="/">
           <i className="bi bi-currency-exchange text-white"></i> My Budget
@@ -19,16 +19,12 @@ const Header = () => {
         {Auth.loggedIn() ? (
           <>
             <h4 className="px-3">
-              <Link className="text-white bg-dark p-1 rounded" to="/dashboard">
+              <Link className="text-white p-1 rounded" to="/dashboard">
                 Dashboard
               </Link>
             </h4>
             <h4 className="px-3">
-              <a
-                className="text-white bg-dark p-1 rounded"
-                href="/"
-                onClick={logout}
-              >
+              <a className="text-white p-1 rounded" href="/" onClick={logout}>
                 Logout
               </a>
             </h4>
@@ -36,12 +32,12 @@ const Header = () => {
         ) : (
           <>
             <h4 className="px-3">
-              <Link className="text-white bg-dark p-1 rounded" to="/login">
+              <Link className="text-white p-1 rounded" to="/login">
                 Login
               </Link>
             </h4>
             <h4 className="px-3">
-              <Link className="text-white bg-dark p-1 rounded" to="/signup">
+              <Link className="text-white p-1 rounded" to="/signup">
                 Signup
               </Link>
             </h4>
