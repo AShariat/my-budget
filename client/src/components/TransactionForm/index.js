@@ -63,7 +63,7 @@ const TransactionForm = (username) => {
   };
 
   return (
-    <div className="container-fluid w-75 mb-5">
+    <div className="container-fluid w-75 my-5">
       <form className="container-fluid" onSubmit={handleFormSubmit}>
         <input
           className="col mb-2"
@@ -112,7 +112,7 @@ const TransactionForm = (username) => {
           onChange={handleChange}
         />
         <button className="col btn btn-dark" type="submit">
-          Submit
+          Add Transaction
         </button>
       </form>
     </div>

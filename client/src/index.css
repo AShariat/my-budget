@@ -1,3 +1,25 @@
 a:hover {
   text-decoration: none;
 }
+header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-image: url(../src/assets/images/homepage.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 9999;
+}
+
+#hero {
+  background-image: url(../src/assets/images/homepage.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 600px;
+}
