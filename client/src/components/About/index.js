@@ -17,7 +17,7 @@ function About(props) {
             <a
               className="btn btn-primary btn-lg bg-light border-light"
               onClick={() => {
-                props.changeFunction("Testimonials");
+                document.getElementById('testimonialsID').scrollIntoView()
               }}
               role="button"
             >

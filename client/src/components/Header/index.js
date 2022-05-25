@@ -36,11 +36,6 @@ const Header = () => {
                 Login
               </Link>
             </h4>
-            <h4 className="px-3">
-              <Link className="text-white p-1 rounded" to="/signup">
-                Signup
-              </Link>
-            </h4>
           </>
         )}
       </nav>
