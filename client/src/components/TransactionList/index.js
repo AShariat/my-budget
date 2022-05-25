@@ -13,7 +13,9 @@ function TransactionList({ transactions }) {
 
   return (
     <div>
-      <p>{total}</p>
+      <div>
+        <h3>Your Remaining Budget is ${total}</h3>
+      </div>
       {transactions &&
         transactions.map((transaction) => (
           <div key={transaction._id} className="card mb-3">

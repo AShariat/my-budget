@@ -77,7 +77,31 @@ const TransactionForm = (username) => {
           value={formState.amount}
           onChange={handleChange}
         />
-        <input
+        <select
+          name="category"
+          id="category"
+          value={formState.category}
+          onChange={handleChange}
+        >
+          <option value="income">Income</option>
+          <option value="housing">Housing</option>
+          <option value="transportation">Transportation</option>
+          <option value="food">Food</option>
+          <option value="utilities">Utilities</option>
+          <option value="clothing">Clothing</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="insurance">Insurance</option>
+          <option value="supplies">Supplies</option>
+          <option value="personal">Personal</option>
+          <option value="debt">Debt</option>
+          <option value="retirement">Retirement</option>
+          <option value="education">Education</option>
+          <option value="savings">Savings</option>
+          <option value="gifts">Gifts</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="miscellaneous">Miscellaneous</option>
+        </select>
+        {/* <input
           className="form-input"
           placeholder="Category"
           name="category"
@@ -85,7 +109,7 @@ const TransactionForm = (username) => {
           id="category"
           value={formState.category}
           onChange={handleChange}
-        />
+        /> */}
         <input
           className="form-input"
           placeholder="Description"
