@@ -62,6 +62,10 @@ const TransactionForm = (username) => {
     }
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <div className="container-fluid w-75 my-5">
       <form className="container-fluid" onSubmit={handleFormSubmit}>
@@ -75,7 +79,7 @@ const TransactionForm = (username) => {
           onChange={handleChange}
         />
         <select
-          className="col mb-2"
+          className="col mb-2 text-secondary"
           name="category"
           id="category"
           value={formState.category}
@@ -111,7 +115,7 @@ const TransactionForm = (username) => {
           value={formState.description}
           onChange={handleChange}
         />
-        <button className="col btn btn-dark" type="submit">
+        <button className="col btn btn-dark" type="submit" onClick={refreshPage}>
           Add Transaction
         </button>
       </form>
