@@ -73,7 +73,11 @@ const Signup = () => {
           Sign Up
         </button>
       </form>
-      {error && <div>Sign Up Failed!</div>}
+      {error && (
+        <h3 className="text-danger text-center mt-5">
+          Sign Up Failed! {error.message}
+        </h3>
+      )}
     </div>
   );
 };
