@@ -18,7 +18,8 @@ This M.E.R.N. full stack application dynamically and safely displays the user's 
 
 [My Budget](https://amir-mybudget.herokuapp.com/)
 ### Application Demo
-![My Budget Demo](./client/src/assets/demo/demo.jpg)
+![demo](https://user-images.githubusercontent.com/88262115/170368160-8fb6970e-42c2-4f36-bb2c-2b2e1cf6c295.jpg)
+
 
 
 ### Features Used
