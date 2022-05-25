@@ -64,6 +64,7 @@ const resolvers = {
           ...args,
           username: context.user.username,
         });
+        console.log(args);
         await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $push: { transactions: transaction._id } },
