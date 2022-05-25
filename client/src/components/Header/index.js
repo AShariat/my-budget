@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header className="container d-flex justify-content-md-between">
+    <header className="container-fluid d-flex">
       <h1>
         <Link to="/">
           <i className="bi bi-currency-exchange"></i> My Budget

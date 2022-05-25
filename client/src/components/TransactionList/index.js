@@ -8,7 +8,11 @@ function TransactionList({ transactions }) {
 
   let total = 0;
   for (var i = 0; i < transactions.length; i++) {
-    total += transactions[i].amount;
+    if (transactions[i].category === "Income") {
+      total += transactions[i].amount;
+    } else {
+      total -= transactions[i].amount;
+    }
   }
 
   return (
@@ -26,12 +30,77 @@ function TransactionList({ transactions }) {
         {transactions &&
           transactions.map((transaction) => (
             <tbody key={transaction._id} className="col mb-2">
-              <tr>
-                <td>{transaction.category}</td>
-                <td>{transaction.amount}</td>
-                <td>{transaction.createdAt}</td>
-                <td>{transaction.description}</td>
-              </tr>
+              {transaction.category === "Income" ? (
+                <tr>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.category}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      ${transaction.amount}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.createdAt}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-success"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.description}
+                    </Link>
+                  </td>
+                </tr>
+              ) : (
+                <tr>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.category}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      ${transaction.amount}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.createdAt}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      className="text-danger"
+                      to={`/transaction/${transaction._id}`}
+                    >
+                      {transaction.description}
+                    </Link>
+                  </td>
+                </tr>
+              )}
             </tbody>
           ))}
       </table>

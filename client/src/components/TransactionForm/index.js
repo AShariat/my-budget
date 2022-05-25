@@ -63,8 +63,8 @@ const TransactionForm = (username) => {
   };
 
   return (
-    <div>
-      <form className="container" onSubmit={handleFormSubmit}>
+    <div className="container-fluid">
+      <form className="container-fluid" onSubmit={handleFormSubmit}>
         <input
           className="col mb-2"
           placeholder="Amount"
@@ -81,23 +81,26 @@ const TransactionForm = (username) => {
           value={formState.category}
           onChange={handleChange}
         >
-          <option value="income">Income</option>
-          <option value="housing">Housing</option>
-          <option value="transportation">Transportation</option>
-          <option value="food">Food</option>
-          <option value="utilities">Utilities</option>
-          <option value="clothing">Clothing</option>
-          <option value="healthcare">Healthcare</option>
-          <option value="insurance">Insurance</option>
-          <option value="supplies">Supplies</option>
-          <option value="personal">Personal</option>
-          <option value="debt">Debt</option>
-          <option value="retirement">Retirement</option>
-          <option value="education">Education</option>
-          <option value="savings">Savings</option>
-          <option value="gifts">Gifts</option>
-          <option value="entertainment">Entertainment</option>
-          <option value="miscellaneous">Miscellaneous</option>
+          <option value="" disabled selected>
+            Category
+          </option>
+          <option value="Income">Income</option>
+          <option value="Housing">Housing</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Food">Food</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Supplies">Supplies</option>
+          <option value="Personal">Personal</option>
+          <option value="Debt">Debt</option>
+          <option value="Retirement">Retirement</option>
+          <option value="Education">Education</option>
+          <option value="Savings">Savings</option>
+          <option value="Gifts">Gifts</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Miscellaneous">Miscellaneous</option>
         </select>
         <input
           className="col mb-2"

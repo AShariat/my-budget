@@ -20,7 +20,7 @@ const Dashboard = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <h3>Loading...</h3>;
   }
 
   if (!user?.username) {
@@ -34,16 +34,12 @@ const Dashboard = () => {
 
   return (
     <div className="container-fluid">
-      <div className="mb-3">
-        {!userParam && <TransactionForm username={user} />}
-      </div>
-      <div className="col-12 mb-3">
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <TransactionList transactions={user.transactions} />
-        )}
-      </div>
+      {!userParam && <TransactionForm username={user} />}
+      {loading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <TransactionList transactions={user.transactions} />
+      )}
     </div>
   );
 };
