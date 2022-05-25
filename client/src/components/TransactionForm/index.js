@@ -33,7 +33,7 @@ const TransactionForm = (username) => {
   //     });
   //   },
   // });
-  if (error) return `Submission Error! ${error.message}`;
+  if (error) return `Submission Failed! ${error.message}`;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -118,11 +118,14 @@ const TransactionForm = (username) => {
         <button
           className="col btn btn-dark"
           type="submit"
-          onClick={refreshPage}
+          // onClick={refreshPage}
         >
           Add Transaction
         </button>
       </form>
+      {error && (
+        <h3 className="text-danger text-center mt-5">Submission Failed!</h3>
+      )}
     </div>
   );
 };
