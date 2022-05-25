@@ -34,15 +34,15 @@ const Dashboard = () => {
 
   return (
     <div className="container-fluid">
+      <div className="mb-3">
+        {!userParam && <TransactionForm username={user} />}
+      </div>
       <div className="col-12 mb-3">
         {loading ? (
           <div>Loading...</div>
         ) : (
           <TransactionList transactions={user.transactions} />
         )}
-      </div>
-      <div className="mb-3">
-        {!userParam && <TransactionForm username={user} />}
       </div>
     </div>
   );
