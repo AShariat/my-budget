@@ -64,12 +64,9 @@ const TransactionForm = (username) => {
 
   return (
     <div>
-      <form
-        className="flex-row justify-center justify-space-between-md align-stretch"
-        onSubmit={handleFormSubmit}
-      >
+      <form className="d-flex flex-column" onSubmit={handleFormSubmit}>
         <input
-          className="form-input"
+          className="mb-3"
           placeholder="Amount"
           name="amount"
           type="amount"
@@ -78,6 +75,7 @@ const TransactionForm = (username) => {
           onChange={handleChange}
         />
         <select
+          className="mb-3"
           name="category"
           id="category"
           value={formState.category}
@@ -101,17 +99,8 @@ const TransactionForm = (username) => {
           <option value="entertainment">Entertainment</option>
           <option value="miscellaneous">Miscellaneous</option>
         </select>
-        {/* <input
-          className="form-input"
-          placeholder="Category"
-          name="category"
-          type="category"
-          id="category"
-          value={formState.category}
-          onChange={handleChange}
-        /> */}
         <input
-          className="form-input"
+          className="mb-3"
           placeholder="Description"
           name="description"
           type="description"
@@ -119,26 +108,7 @@ const TransactionForm = (username) => {
           value={formState.description}
           onChange={handleChange}
         />
-
-        {/* <textarea
-          placeholder="Amount"
-          value={formState.amount}
-          className="form-input col-12 col-md-9"
-          onChange={handleChange}
-        ></textarea>
-        <textarea
-          placeholder="Category"
-          value={formState.category}
-          className="form-input col-12 col-md-9"
-          onChange={handleChange}
-        ></textarea>
-        <textarea
-          placeholder="Description"
-          value={formState.description}
-          className="form-input col-12 col-md-9"
-          onChange={handleChange}
-        ></textarea> */}
-        <button className="btn col-12 col-md-3" type="submit">
+        <button className="btn btn-primary" type="submit">
           Submit
         </button>
       </form>
