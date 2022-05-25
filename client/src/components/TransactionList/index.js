@@ -105,24 +105,6 @@ function TransactionList({ transactions }) {
           ))}
       </table>
     </div>
-    // <div className="container">
-    //   <div>
-    //     <h3>Your Remaining Budget is ${total}</h3>
-    //   </div>
-    //   {transactions &&
-    //     transactions.map((transaction) => (
-    //       <div key={transaction._id} className="col mb-2">
-    //         <div>
-    //           <p>{transaction.category}</p>
-    //           <p>{transaction.amount}</p>
-    //           <p>{transaction.createdAt}</p>
-    //           <Link to={`/transaction/${transaction._id}`}>
-    //             <p>{transaction.description}</p>
-    //           </Link>
-    //         </div>
-    //       </div>
-    //     ))}
-    // </div>
   );
 }
 
