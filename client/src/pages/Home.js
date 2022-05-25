@@ -1,12 +1,8 @@
 import React from "react";
 import About from "../components/About";
 import Testimonials from "../components/Testimonials";
-import HeroImage from "../assets/images/homepage.jpg";
-
-const imageStyle = {};
 
 function Home() {
-
   return (
     <div className="flex-column">
       <div
