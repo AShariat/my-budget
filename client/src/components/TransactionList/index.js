@@ -22,8 +22,8 @@ function TransactionList({ transactions }) {
 
   return (
     <div className="flex-column">
-      <h3 className="col text-center mb-5 text-primary">
-        Your Remaining Budget is ${total}
+      <h3 className="text-center mb-5 text-primary">
+        Your Remaining Budget is {currencyFormatter.format(total)}
       </h3>
       <table className="table">
         <thead>
@@ -36,7 +36,7 @@ function TransactionList({ transactions }) {
         </thead>
         {transactions &&
           transactions.map((transaction) => (
-            <tbody key={transaction._id} className="mb-2">
+            <tbody key={transaction._id}>
               {transaction.category === "Income" ? (
                 <tr>
                   <td>

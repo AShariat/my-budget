@@ -30,7 +30,3 @@ header {
 main {
   min-height: 100vh;
 }
-
-@media (max-width: 390px) {
-  /* add media query to lock mobile device centering */
-}
