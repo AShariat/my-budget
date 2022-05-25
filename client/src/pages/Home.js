@@ -6,6 +6,7 @@ import HeroImage from "../assets/images/homepage.jpg";
 const imageStyle = {};
 
 function Home() {
+
   return (
     <div className="flex-column">
       <div

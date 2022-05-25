@@ -62,7 +62,7 @@ const Login = (props) => {
 
         <Link to="/signup">
           <button className="col btn btn-dark my-2" type="Sign-Up">
-            sign-up
+            Sign-Up
           </button>
         </Link>
       </form>
