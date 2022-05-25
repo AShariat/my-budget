@@ -17,7 +17,7 @@ function TransactionList({ transactions }) {
 
   return (
     <div className="flex-column">
-      <h3 className="text-center mb-5 text-primary">
+      <h3 className="col text-center mb-5 text-primary">
         Your Remaining Budget is ${total}
       </h3>
       <table className="table">

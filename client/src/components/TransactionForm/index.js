@@ -115,7 +115,11 @@ const TransactionForm = (username) => {
           value={formState.description}
           onChange={handleChange}
         />
-        <button className="col btn btn-dark" type="submit" onClick={refreshPage}>
+        <button
+          className="col btn btn-dark"
+          type="submit"
+          onClick={refreshPage}
+        >
           Add Transaction
         </button>
       </form>
