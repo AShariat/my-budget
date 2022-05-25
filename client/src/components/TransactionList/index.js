@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMutation } from "@apollo/client";
-import { QUERY_ME } from "../../utils/queries";
 import { DELETE_TRANSACTION } from "../../utils/mutations";
 
 function TransactionList({ transactions }) {
-  const [remove] = useMutation(DELETE_TRANSACTION);
+  const [deleteTransaction] = useMutation(DELETE_TRANSACTION);
 
   if (!transactions.length) {
     return <h3 className="text-center mt-5">No Transactions Yet!</h3>;
@@ -29,13 +28,18 @@ function TransactionList({ transactions }) {
     event.preventDefault();
 
     try {
-      const { data } = await remove({
+      const { data } = await deleteTransaction({
         variables: { transactionId: transId },
       });
+      refreshPage();
     } catch (e) {
       console.error(e);
     }
   };
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   return (
     <div className="flex-column">
