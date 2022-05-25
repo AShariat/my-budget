@@ -52,7 +52,7 @@ function TransactionList({ transactions }) {
                       className="text-success"
                       to={`/transaction/${transaction._id}`}
                     >
-                      ${transaction.amount}
+                      {currencyFormatter.format(transaction.amount)}
                     </Link>
                   </td>
                   <td>
@@ -87,7 +87,7 @@ function TransactionList({ transactions }) {
                       className="text-danger"
                       to={`/transaction/${transaction._id}`}
                     >
-                      ${transaction.amount}
+                      {currencyFormatter.format(transaction.amount)}
                     </Link>
                   </td>
                   <td>
