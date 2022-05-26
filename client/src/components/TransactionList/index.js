@@ -46,8 +46,8 @@ function TransactionList({ transactions }) {
       <h3 className="text-center mb-5 text-primary">
         Your Remaining Budget is {currencyFormatter.format(total)}
       </h3>
-      <table className="table">
-        <thead>
+      <table className="container">
+        <thead className="border">
           <tr>
             <th scope="col">Category</th>
             <th scope="col">Amount</th>
@@ -60,7 +60,7 @@ function TransactionList({ transactions }) {
           transactions.map((transaction) => (
             <tbody key={transaction._id}>
               {transaction.category === "Income" ? (
-                <tr>
+                <tr className="border">
                   <td className="text-success">{transaction.category}</td>
                   <td className="text-success">
                     {currencyFormatter.format(transaction.amount)}
@@ -78,7 +78,7 @@ function TransactionList({ transactions }) {
                   </th>
                 </tr>
               ) : (
-                <tr>
+                <tr className="border">
                   <td className="text-danger">{transaction.category}</td>
                   <td className="text-danger">
                     {currencyFormatter.format(transaction.amount)}
