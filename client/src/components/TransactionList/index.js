@@ -61,12 +61,18 @@ function TransactionList({ transactions }) {
             <tbody key={transaction._id}>
               {transaction.category === "Income" ? (
                 <tr className="border">
-                  <td className="text-success">{transaction.category}</td>
-                  <td className="text-success">
+                  <td className="text-success border">
+                    {transaction.category}
+                  </td>
+                  <td className="text-success border">
                     {currencyFormatter.format(transaction.amount)}
                   </td>
-                  <td className="text-success">{transaction.createdAt}</td>
-                  <td className="text-success">{transaction.description}</td>
+                  <td className="text-success border">
+                    {transaction.createdAt}
+                  </td>
+                  <td className="text-success border">
+                    {transaction.description}
+                  </td>
                   <th scope="row">
                     <button
                       className="btn btn-warning"
@@ -79,12 +85,16 @@ function TransactionList({ transactions }) {
                 </tr>
               ) : (
                 <tr className="border">
-                  <td className="text-danger">{transaction.category}</td>
-                  <td className="text-danger">
+                  <td className="text-danger border">{transaction.category}</td>
+                  <td className="text-danger border">
                     {currencyFormatter.format(transaction.amount)}
                   </td>
-                  <td className="text-danger">{transaction.createdAt}</td>
-                  <td className="text-danger">{transaction.description}</td>
+                  <td className="text-danger border">
+                    {transaction.createdAt}
+                  </td>
+                  <td className="text-danger border">
+                    {transaction.description}
+                  </td>
                   <th scope="row">
                     <button
                       className="btn btn-warning"
